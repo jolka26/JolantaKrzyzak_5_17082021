@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <script src="index.js"></script>
+
     <title>Bienvenue chez Orinoco ! </title>
 
   </head>
@@ -49,10 +51,15 @@
     <!--Header End-->
 
     <!--Main Container-->
-   <main>
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis esse dignissimos alias voluptas aut modi
-           officia eaque dolor. Perferendis quidem itaque obcaecati ea illo quis voluptas ratione quasi officiis?
-           Expedita.</p>
+   <main class="main" id="main">
+        <h2 class="title text-center"> Nos produits</h2>
+        <template id="templateProduct">
+            <div class="product">
+                <img class="product__image" id="product__image" alt="product image">
+                <h3 class="product__name text-center" id="product__name">NAME</h3>
+                <p class="product__price text-center" id="product__price">PRICE</p>
+            </div>
+        </template>
    </main>
    <!--Main Container-->
 
