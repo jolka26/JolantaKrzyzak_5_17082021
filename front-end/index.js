@@ -1,5 +1,4 @@
-// const urlApi = "http://localhost:3000/api/furniture ";
-// console.log("hello world");
+const urlApi = "http://localhost:3000/api/furniture ";
 
 main()
 
@@ -10,9 +9,9 @@ async function main() {
         displayProduct(product)
     }
 }
-// recupere les produits depuis API 
+// recupere les produits depuis API  , en cas d'erreur de connection, message d'erreur
 function getProducts() {
- return fetch("http://localhost:3000/api/furniture")
+ return fetch(urlApi)
   .then(function(httpBodyResponse) {
     return httpBodyResponse.json()
   })
@@ -25,15 +24,49 @@ function getProducts() {
   })
 }
 
+
+ // affichage de produit --> name, price    1- moins securise//  2- plus securise
 function displayProduct(){
     // return "displayProducts"
 
-const templateElement = document.getElementById("templateProduct")
-const cloneElement = document.importNode(templateElement.content, true)
+    document.getElementById("main").innerHTML +=   `
+       <div class="product"> 
+        
 
-cloneElement.getElementById("product__image").textContent = product.imageUrl[1]
-cloneElement.getElementById("product__name").textContent = product.name
-cloneElement.getElementById("product__price").textContent = product.price
+       <div class="card " style="max-width: 18rem;" >
+       <img src="${product.imageUrl}" class="card-img-top" alt="product image">
+       <div class="card-body">
+         <h5 class="card-title">${product.name}</h5>
+         <p class="card-price">${product.price} €</p>
+         <a href="" class="btn btn-primary">Voir</a>
+       </div>
+     </div>
 
-document.getElementById("main").appendChild(cloneElement)
+  
+     </div>
+  
+  `
+
+
+    // <img src="${product.imageUrl}" class="product__image" id="product__image" alt="product image" width="150" height="150">
+    // // <h3 class="product__name text-center" id="product__name">${product.name}</h3>
+    // // <p class="product__price text-center" id="product__price">${product.price}</p>
+    // // </div> 
+
+ //    <div class="product"> 
+  //    <div class="row">
+  //    <div class="col-4">
+  //    <div class="card" style="width: 18rem;">
+  //    <img src="${product.imageUrl}" class="card-img-top" alt="product image">
+  //    <div class="card-body">
+  //      <h5 class="card-title">${product.name}</h5>
+  //      <p class="card-price">${product.price} €</p>
+  //      <a href="" class="btn btn-primary">Voir plus</a>
+  //    </div>
+  //  </div>
+  //  </div>
+  //  </div>
+  //  </div>
 }
+
+
