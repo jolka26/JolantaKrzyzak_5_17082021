@@ -10,8 +10,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   
-       <!-- <link rel="stylesheet" href="./css/style.css"> -->
-       <script src="https://kit.fontawesome.com/20c66add5f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    
 
     <title>Bienvenue chez Orinoco ! </title>
 
@@ -21,10 +21,10 @@
        <!--Header-->
        <header>
        <!--Navbar-->
-       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
            <div class="container">
-               <a class="navbar-brand" href="index.html">
-                   <img src="img/shopping-cart-solid.svg" width="30" height="30" alt="logo Orinoco"> Orinoco</a>
+          <a class="navbar-brand" href="index.html">
+                   <img src="img/shopping-cart-solid.svg" alt="logo Orinoco" id="logo"> ORINOCO</a>
 
                <!--Burger button-->
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -36,11 +36,11 @@
                <!--Navlinks accueil et panier-->
                <div id="navbarContent" class="collapse navbar-collapse justify-content-end">
                    <ul class="navbar-nav">
-                       <li class="nav-item active">
-                           <a class="nav-link" href="index.html">Accueil</a>
+                       <li class="nav-item ">
+                           <a class="nav-link text-white" href="index.html">Accueil</a>
                        </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="panier.html"><img src="img/shopping-basket-solid.svg" width="25" height="25" alt="icone panier"></a>
+                       <li class="nav-item ">
+                           <a class="nav-link text-white" href="panier.html">Panier <img src="img/shopping-basket-solid.svg" id="logo__basket" alt="icone panier"></a>
                        </li>
                    </ul>
                </div>
@@ -54,36 +54,27 @@
 
     <!--Main Container-->
    <main class="main" id="main">
-        <h2 class="title text-center"> Nos produits</h2>
+       <h2 class="title text-center"> Nos produits</h2>
+       <div class="products" id="products">
 
-            <div class="product justify-content-center"> 
-            <!-- template index.js -->
-                        <!-- <div class="card">
-                            <img src="" class="card-img-top" alt="product image">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div> -->
-              
-            </div>
+           <!-- dynamique content js-->
+
+       </div>
    </main>
    <!--Main Container-->
 
    <!--Footer-->
    <footer>
-       <div class="container-fluid bg-light">
+       <div class="container-fluid bg-secondary">
            <ul class="nav nav-pills nav-fill">
-               <li class="nav-item">
-                   <a class="nav-link" href="#">Conditions générales de vente</a>
+               <li class="nav-item ">
+                   <a class="nav-link text-white" href="#">Conditions générales de vente</a>
                </li>
                <li class="nav-item">
-                   <a class="nav-link" href="#">Cookies</a>
+                   <a class="nav-link text-white" href="#">Cookies</a>
                </li>
                <li class="nav-item">
-                   <a class="nav-link" href="#">Contact</a>
+                   <a class="nav-link text-white" href="#">Contact</a>
                </li>
 
            </ul>

@@ -27,46 +27,20 @@ function getProducts() {
 
  // affichage de produit --> name, price
 function displayProduct(){
-    // return "displayProducts"
 
-    document.getElementById("main").innerHTML +=   `
-       <div class="product"> 
-        
+    document.getElementById("products").innerHTML +=   `
+    <div class="card">
+            <img src="${product.imageUrl}" class="card-img-top" alt="product image">
+        <div class="card-body " >
+            <h5 class="product__name">${product.name}</h5>
+            <p class="product__price">${product.price} €</p>
+            <a href="" class="btn btn-primary">Voir produit</a>
+        </div>
+    </div>
 
-       <div class="card" style="max-width: 18rem;" >
-       <img src="${product.imageUrl}" class="card-img-top" alt="product image">
-       <div class="card-body">
-         <h5 class="card-title">${product.name}</h5>
-         <p class="card-price">${product.price} €</p>
-         <a href="" class="btn btn-primary">Voir</a>
-       </div>
-     </div>
-
-  
-     </div>
   
   `
 
-
-    // <img src="${product.imageUrl}" class="product__image" id="product__image" alt="product image" width="150" height="150">
-    // // <h3 class="product__name text-center" id="product__name">${product.name}</h3>
-    // // <p class="product__price text-center" id="product__price">${product.price}</p>
-    // // </div> 
-
- //    <div class="product"> 
-  //    <div class="row">
-  //    <div class="col-4">
-  //    <div class="card" style="width: 18rem;">
-  //    <img src="${product.imageUrl}" class="card-img-top" alt="product image">
-  //    <div class="card-body">
-  //      <h5 class="card-title">${product.name}</h5>
-  //      <p class="card-price">${product.price} €</p>
-  //      <a href="" class="btn btn-primary">Voir plus</a>
-  //    </div>
-  //  </div>
-  //  </div>
-  //  </div>
-  //  </div>
 }
 
 

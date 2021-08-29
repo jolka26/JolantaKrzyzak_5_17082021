@@ -1,8 +1,70 @@
-* {
-    width: 100%;
+/* CSS */
+html { 
+    width: auto;
+    height: auto; 
+}
+
+#logo {
+    padding-bottom: 10px;
+}
+
+nav {
     height: auto;
+    margin-bottom: 40px;
+}
+.navbar-brand {
+    width: 25px;
+    height: 25px;
+}
+
+#navbarContent{
+    justify-content: end;
+}
+
+#logo__basket{
+    width: 25px;
+    height: 25px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.title {
+    padding: 40px;
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .card {
-    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 40vw;
+    margin: 20px 15px 20px 15px;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+.card-img-top{
+    border-radius: 20px 20px 0 0 ;
+}
+
+.card-body {
+    text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+
+    .title {
+        padding: 10px;
+    }
+    .card {
+        width: 100%;
+    }
 }
