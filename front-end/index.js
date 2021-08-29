@@ -25,7 +25,7 @@ function getProducts() {
 }
 
 
- // affichage de produit --> name, price    1- moins securise//  2- plus securise
+ // affichage de produit --> name, price
 function displayProduct(){
     // return "displayProducts"
 
@@ -33,7 +33,7 @@ function displayProduct(){
        <div class="product"> 
         
 
-       <div class="card " style="max-width: 18rem;" >
+       <div class="card" style="max-width: 18rem;" >
        <img src="${product.imageUrl}" class="card-img-top" alt="product image">
        <div class="card-body">
          <h5 class="card-title">${product.name}</h5>
