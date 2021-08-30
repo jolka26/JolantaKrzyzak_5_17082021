@@ -58,6 +58,34 @@ nav {
 .card-body {
     text-align: center;
 }
+.product-container {
+   min-height: 80vh;
+
+}
+
+#card-product {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 50vw;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    max-height: auto;
+ 
+}
+
+#imgProduit {
+    height: auto;
+    width: 50%;
+    border-radius: 20px 0 0 20px;
+}
+
+
+footer {
+    margin-top: 53px;
+}
+
 
 @media screen and (max-width: 425px) {
 

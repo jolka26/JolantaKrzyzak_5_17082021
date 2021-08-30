@@ -22,8 +22,9 @@ function getProducts() {
       function displayProduct(){
   
         document.getElementById("main").innerHTML +=   `
-        <div class="card">
-        <img class="card-img-top" src="${produit.imageUrl}" alt="meuble en chêne">
+        <div class="product-container">
+        <div class="card" id="card-product">
+        <img class="card-img-top" id="imgProduit" src="${produit.imageUrl}" alt="meuble en chêne">
     
         <section id="bloc-product">
             <h2 class="nameProduit"> ${produit.name}</h2>
@@ -32,6 +33,7 @@ function getProducts() {
     
             <a href="index.html" class="retour">Retour </a>
         </section>
+        </div>
         </div>
     `
     }
