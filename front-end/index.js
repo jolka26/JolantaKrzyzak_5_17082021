@@ -1,10 +1,11 @@
-const urlApi = "http://localhost:3000/api/furniture ";
+const urlApi = "http://localhost:3000/api/furniture/";
+const url2 = "produit.html" + "?" ;
+
 
 main()
 
 async function main() {
     const products = await getProducts()
-    // console.log(products)
     for (product of products) {
         displayProduct(product)
     }
@@ -15,10 +16,6 @@ function getProducts() {
   .then(function(httpBodyResponse) {
     return httpBodyResponse.json()
   })
-//   .then(function(products) {
-//     //   console.log(products)
-//     return products
-//   })
   .catch(function(error) {
     alert ("error quelque chose ne va pas.. êtes-vous connecté à api ?")
   })
@@ -34,13 +31,12 @@ function displayProduct(){
         <div class="card-body " >
             <h5 class="product__name">${product.name}</h5>
             <p class="product__price">${product.price} €</p>
-            <a href="" class="btn btn-primary">Voir produit</a>
+            <a href='${url2}id=${product._id}' class="btn btn-primary">Voir produit</a>
         </div>
     </div>
 
-  
   `
-
+// '${urlApi}${product._id}'
 }
 
 
