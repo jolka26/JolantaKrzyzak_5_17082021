@@ -16,8 +16,10 @@ function getProducts() {
   })
   .then(function(result) {
       const produit = result;
+      const color = result.varnish;
 
       displayProduct();
+      addColor();
 
       function displayProduct(){
   
@@ -30,12 +32,30 @@ function getProducts() {
             <h2 class="nameProduit"> ${produit.name}</h2>
             <div class="descriptionProduit"> ${produit.description}</div>
             <div class="prixProduit"><strong>${produit.price} €</strong></div>
-    
+
+            <label for="varnish">Choisir la varnish:</label>
+
+            <select name="varnish" id="varnish">
+            </select> <br>
+            <button>Ajouter au panier</button> <br>
+
             <a href="index.html" class="retour">Retour </a>
         </section>
+     
         </div>
+        
         </div>
     `
+    }
+
+    function addColor(){
+
+        for (let i=0; i < color.length; i++ ) {
+
+            document.getElementById("varnish").innerHTML += `
+            <option value="${color[i]}"> ${color[i]} </option>
+            `
+        }
     }
 
   })
