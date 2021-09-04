@@ -54,33 +54,21 @@
 
     <!--Main Container-->
    <main class="main" id="main">
-  
-    
-     <!-- dynamique content panier.js-->
-     <!-- <div class="product-container">
-        <div class="card" id="card-product">
-        <img class="card-img-top" id="imgProduit" src="${produit.imageUrl}" alt="meuble en chêne">
-    
-        <section id="bloc-product">
-            <h2 class="nameProduit"> ${produit.name}</h2>
-            <div class="descriptionProduit"> ${produit.description}</div>
-            <div class="prixProduit"><strong>${produit.price} €</strong></div>
+       <h2 class="text-center">Votre Panier</h2>
 
-            <label for="varnish">Choisir le vernis:</label>
-            <select name="varnish" id="varnish">
-            </select> <br>
-            <label for="productNumber">Quantité :</label>
-            <input id="productNumber" type="number" name="productNumber" value="1" min="1" max="10">
+       <!-- dynamique content panier.js-->
+       <div class="product-container">
+           <div class="card card-panier" id="card panier">
+               <div class="name"> NAME </div>
+               <div class="color"> COLOR </div>
+               <div class="quantite"> QUANTITE </div>
+               <div class="prix"> PRIX </div>
+           </div>
+           <div class="card card-panier" id="card panier">
+               <div class="total"> TOTAL </div>
+           </div>
+       </div>
 
-            <button id=${produit._id}>Ajouter au panier</button> <br>
-
-            <a href="index.html" class="retour">Retour </a>
-        </section>
-     
-        </div>
-        
-        </div> -->
-    
    </main>
    <!--Main Container-->
 

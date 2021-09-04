@@ -81,7 +81,16 @@ nav {
     border-radius: 20px 0 0 20px;
 }
 
+.card-panier {
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-around;
+    width: auto;
+}
 
+.total{
+    justify-content: start;
+}
 
 footer {
     margin-top: 53px;

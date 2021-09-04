@@ -20,6 +20,7 @@ function getProducts() {
   .then(function(result) {
       const produit = result;
       const color = result.varnish;
+      
 
       displayProduct();
       addColor();
@@ -43,11 +44,10 @@ function getProducts() {
             <label for="productNumber">Quantité :</label>
             <input id="productNumber" type="number" name="productNumber" value="1" min="1" max="10">
 
-            <button id="addPanier">Ajouter au panier</button> <br>
+            <button id="addPanier" data-id=${produit._id}>Ajouter au panier</button> <br>
 
             <a href="index.html" class="retour">Retour </a>
         </section>
-     
         </div>
         
         </div>
@@ -68,12 +68,14 @@ function getProducts() {
 
         const addButton = document.getElementById("addPanier");
 
-        const productName = document.getElementsByClassName("nameProduit");
-        const productPrice = document.getElementsByClassName("prixProduit");
         const productNumber = document.getElementById("productNumber");
         const productColor = document.getElementById("varnish");
 
-        addButton.addEventListener("click", () => {
+        const confirmation = document.getElementById("confirmation");
+
+        addButton.addEventListener("click", (event) => {
+
+            event.preventDefault();
 
             if (productNumber.value > 0 && productNumber.value < 11 ) {
             let votreProduit = {
@@ -82,14 +84,16 @@ function getProducts() {
                 // number: produit.value,
                 // color: produit.varnish.value
 
-                name: productName.innerHTML,
-                price: productPrice.innerHTML,
+                name: produit.name,
+                price: produit.price + " €",
                 number: productNumber.value,
                 color: productColor.value,
                 id: id
             };
 
-            const panier = [];
+            console.log(votreProduit);
+
+            let panier = [];
 
             if(localStorage.getItem("productStore") !== null) {
                 panier = JSON.parse(localStorage.getItem("productStore"));
@@ -97,9 +101,10 @@ function getProducts() {
 
             panier.push(votreProduit);
             localStorage.setItem("productStore", JSON.stringify(panier));
+            alert(`Votre ${productNumber.value} produit à éte bien ajouté dans le panier!`)
 
-        }
-        })
+            }
+        });
 
     }
   })
