@@ -85,7 +85,8 @@ function getProducts() {
                 name: productName.innerHTML,
                 price: productPrice.innerHTML,
                 number: productNumber.value,
-                color: productColor.value
+                color: productColor.value,
+                id: id
             };
 
             const panier = [];
