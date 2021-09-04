@@ -71,8 +71,6 @@ function getProducts() {
         const productNumber = document.getElementById("productNumber");
         const productColor = document.getElementById("varnish");
 
-        const confirmation = document.getElementById("confirmation");
-
         addButton.addEventListener("click", (event) => {
 
             event.preventDefault();
@@ -95,13 +93,22 @@ function getProducts() {
 
             let panier = [];
 
+            const popupConfirmation = () => {
+                if(window.confirm (`${productNumber.value} produit vernis: ${productColor.value} à éte bien ajouté dans le panier!
+                 Pour continuer achats cliquer CANCEL, pour consulter votre panier OK`)){
+                    window.location.href = "panier.html"
+                }else {
+                    window.location.href = "#"
+                }
+            }
+
             if(localStorage.getItem("productStore") !== null) {
                 panier = JSON.parse(localStorage.getItem("productStore"));
             }
 
             panier.push(votreProduit);
             localStorage.setItem("productStore", JSON.stringify(panier));
-            alert(`Votre ${productNumber.value} produit à éte bien ajouté dans le panier!`)
+            popupConfirmation();
 
             }
         });
