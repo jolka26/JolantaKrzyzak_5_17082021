@@ -1,9 +1,12 @@
 let params = new URL(document.location).searchParams;
 let id = params.get("id");
 // console.log(id);
+// const productName = document.getElementsByClassName("nameProduit");
+// const productPrice = document.getElementsByClassName("prixProduit");
+// const productNumber = document.getElementById("productNumber");
+// const productColor = document.getElementById("varnish");
 
-
-getProducts()
+getProducts();
 
 // recupere le produit depuis API  , en cas d'erreur de connection, message d'erreur, si non il affiche produit choisir 
 function getProducts() {
@@ -20,6 +23,7 @@ function getProducts() {
 
       displayProduct();
       addColor();
+      addPanier();
 
       function displayProduct(){
   
@@ -33,11 +37,13 @@ function getProducts() {
             <div class="descriptionProduit"> ${produit.description}</div>
             <div class="prixProduit"><strong>${produit.price} €</strong></div>
 
-            <label for="varnish">Choisir la varnish:</label>
-
+            <label for="varnish">Choisir le vernis:</label>
             <select name="varnish" id="varnish">
             </select> <br>
-            <button>Ajouter au panier</button> <br>
+            <label for="productNumber">Quantité :</label>
+            <input id="productNumber" type="number" name="productNumber" value="1" min="1" max="10">
+
+            <button id="addPanier">Ajouter au panier</button> <br>
 
             <a href="index.html" class="retour">Retour </a>
         </section>
@@ -58,6 +64,43 @@ function getProducts() {
         }
     }
 
+    function addPanier() {
+
+        const addButton = document.getElementById("addPanier");
+
+        const productName = document.getElementsByClassName("nameProduit");
+        const productPrice = document.getElementsByClassName("prixProduit");
+        const productNumber = document.getElementById("productNumber");
+        const productColor = document.getElementById("varnish");
+
+        addButton.addEventListener("click", () => {
+
+            if (productNumber.value > 0 && productNumber.value < 11 ) {
+            let votreProduit = {
+                // name: produit.name.innerHTML,
+                // price: produit.price.innerHTML,
+                // number: produit.value,
+                // color: produit.varnish.value
+
+                name: productName.innerHTML,
+                price: productPrice.innerHTML,
+                number: productNumber.value,
+                color: productColor.value
+            };
+
+            const panier = [];
+
+            if(localStorage.getItem("productStore") !== null) {
+                panier = JSON.parse(localStorage.getItem("productStore"));
+            }
+
+            panier.push(votreProduit);
+            localStorage.setItem("productStore", JSON.stringify(panier));
+
+        }
+        })
+
+    }
   })
 
 }
