@@ -41,7 +41,7 @@ function getProducts() {
             <label for="varnish">Choisir le vernis:</label>
             <select name="varnish" id="varnish">
             </select> <br>
-            <label for="productNumber">Quantité :</label>
+            <label for="productNumber">Quantité (max 10):</label>
             <input id="productNumber" type="number" name="productNumber" value="1" min="1" max="10">
             
             <div id="buttons">

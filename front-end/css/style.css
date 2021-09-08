@@ -191,5 +191,114 @@ footer {
     }
     .card {
         width: 100%;
+        height: 60vh;
+    }
+    .card-img-top{
+        border-radius: 20px 20px 0 0 ;
+        height: 60%;
+    }
+    .card-body {
+        height: auto;
+        padding: 0;
+        margin: 0;
+        justify-content: stretch;
+    }
+    .card-body p{
+        margin: 3px;
+    }
+
+    #card-product {
+        width: auto;
+        margin: 2%;
+    }
+
+    .table{
+        margin: 0.5rem;
+        width: auto;
+    }
+
+     #table__panier{
+        margin: 0.1rem;
+        /* display: flex;
+        flex-direction: row;
+     */
+    }
+     .container-recapitulatif {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0;
+
+       
+    }
+    .info {
+        padding: 2px;
+    }
+   /* .container-montant-total {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+        width: auto;
+        background-color:rgb(91, 179, 91); 
+        margin: 3rem;
+        height: auto;
+    } */
+     /*
+    
+    .container-panier-vide {
+        width: auto;
+        height: 50vh;
+        background-color: tomato;
+        text-align: center;
+        justify-content: center;
+    }
+    */
+     /*
+    .buttons {
+        display: flex;
+        justify-content:space-around;
+    }
+    .ajout {
+        border-radius: 40px;
+        padding: 20px;
+        background-color: green;
+    }
+    
+    .supprimer {
+        border-radius: 40px;
+        padding: 10px;
+        background-color: cornflowerblue;
+    } */
+
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .title {
+        padding: 15px;
+    }
+    .card {
+        width: 100%;
+        height: 80vh;
+    }
+    .card-img-top{
+        border-radius: 20px 20px 0 0 ;
+        height: 70%;
+    }
+    .card-body {
+        height: auto;
+        padding: 0;
+        margin: 0;
+        justify-content: stretch;
+    }
+
+    #card-product {
+        width: auto;
+        margin: 2%;
+    }
+    #productNumber {
+       margin-top 2px;
     }
 }

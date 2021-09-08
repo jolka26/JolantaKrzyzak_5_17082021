@@ -43,10 +43,10 @@ else {
    
     produitPanier = produitPanier + `
     <div class=" container-recapitulatif">
-    <div>Nom produit: ${panier[j].name}</div>
-    <div>Quantite:  ${panier[j].number}</div>
-    <div>Color:  ${panier[j].color}</div>
-    <div>Prix:  ${prix2 * panier[j].number} €</div>
+    <div class="info">Nom: ${panier[j].name}</div>
+    <div class="info"> Quantite:  ${panier[j].number}</div>
+    <div class="info"> Color:  ${panier[j].color}</div>
+    <div class="info">Prix:  ${prix2 * panier[j].number} €</div>
     </div>
     `
 
