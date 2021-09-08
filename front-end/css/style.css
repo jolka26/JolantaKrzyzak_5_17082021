@@ -40,10 +40,9 @@ nav {
     padding-bottom: 5px;
     
 }
-/* .main {
-    background-color: darkcyan;
-    margin: auto;
-} */
+.main {
+   margin-bottom: 5rem;
+}
 .title {
     padding: 40px;
 }
@@ -79,6 +78,7 @@ nav {
 .product-container {
    min-height: 80vh;
 
+
 }
 
 #card-product {
@@ -88,7 +88,6 @@ nav {
     align-items: center;
     margin: auto;
     justify-content: center;
-
 }
 
 #imgProduit {
@@ -179,8 +178,10 @@ nav {
 }
 
 footer {
-    position: relative;
-    margin-top: 193px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 
 }
 
