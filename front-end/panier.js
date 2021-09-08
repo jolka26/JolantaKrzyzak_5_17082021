@@ -32,18 +32,24 @@ else {
     // console.log("je ne suis pas vide!");
   produitPanier = [];
 
+
   for(j=0; j< panier.length; j++){
     //   console.log(panier.length);
+
+    let prix = panier[j].price;
+    let prix2 = parseInt(prix.substring(0, prix.length -2));
+
+    //console.log( prix2 * panier[j].number);
+   
     produitPanier = produitPanier + `
     <div class="card container-recapitulatif">
     <div>Nom produit: ${panier[j].name}</div>
     <div>Quantite:  ${panier[j].number}</div>
     <div>Color:  ${panier[j].color}</div>
-    <div>Prix:  ${panier[j].price}</div>
+    <div>Prix:  ${prix2 * panier[j].number} €</div>
     </div>
-    `;
+    `
 
- 
   }
   if(j == panier.length){
   positionPanier.innerHTML = produitPanier;
@@ -70,7 +76,8 @@ function viderPanier() {
 
 
 
-///prix to tal
+///prix total
+
 
  
 function prixTotal() {
@@ -81,9 +88,10 @@ function prixTotal() {
   
     let price = panier[k].price
     let newPrice = price.substring(0, price.length - 2)
-    //console.log(newPrice);
-    let prixProduitDansPanier = parseInt(newPrice);
-    //console.log(prixProduitDansPanier);
+    // //console.log(newPrice);
+    let priceInt = parseInt(newPrice)
+    let prixProduitDansPanier = priceInt * panier[k].number;
+    // console.log("mon prix: " + prixProduitDansPanier);
     allPrice.push(prixProduitDansPanier);
     // console.log(allPrice);
   }
