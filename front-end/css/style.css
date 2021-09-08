@@ -18,7 +18,10 @@ div {
 }
 
 #logo {
-    padding-bottom: 10px;
+    padding-top: 5px;
+    margin-right: 8px;
+    height: 35px;
+    width: 35px;
 }
  
 nav {
@@ -26,8 +29,7 @@ nav {
     margin-bottom: 40px;
 }
 .navbar-brand {
-    width: 25px;
-    height: 25px;
+     height: 25px;
 }
 
 #navbarContent{
@@ -35,8 +37,8 @@ nav {
 }
 
 #logo__basket{
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     padding-bottom: 5px;
     
 }
