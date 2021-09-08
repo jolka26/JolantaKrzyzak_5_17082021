@@ -79,7 +79,7 @@ function getProducts() {
             let votreProduit = {
                 // name: produit.name.innerHTML,
                 // price: produit.price.innerHTML,
-                // number: produit.value,
+                // number: produit.value, + " €"
                 // color: produit.varnish.value
 
                 name: produit.name,
