@@ -94,7 +94,7 @@ function getProducts() {
             let panier = [];
 
             const popupConfirmation = () => {
-                if(window.confirm (`${productNumber.value} produit vernis: ${productColor.value} à éte bien ajouté dans le panier!
+                if(window.confirm(`${productNumber.value} produit vernis: ${productColor.value} à éte bien ajouté dans le panier!
                  Pour continuer achats cliquer CANCEL, pour consulter votre panier OK`)){
                     window.location.href = "panier.html"
                 }else {

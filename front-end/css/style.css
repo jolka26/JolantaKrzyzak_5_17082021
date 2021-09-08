@@ -1,13 +1,22 @@
 /* CSS */
-html { 
-    width: auto;
-    height: auto; 
+* { 
+    /* width: auto;
+    height: auto;  */
+    margin: 0;
+    padding: 0;
+}
+div {
+    font-size: 1.6rem;
+}
+
+:root {
+    font-size: 62,5%;
 }
 
 #logo {
     padding-bottom: 10px;
 }
-
+ 
 nav {
     height: auto;
     margin-bottom: 40px;
@@ -81,16 +90,32 @@ nav {
     border-radius: 20px 0 0 20px;
 }
 
-.card-panier {
-    display: flex;
-    flex-direction: row ;
-    justify-content: space-around;
-    width: auto;
+.table {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-row-gap: 1rem;
+    
 }
+/* .product-container-panier {
+    display: flex;
+    flex-direction: column;
 
+} */
+
+/* .panier-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.product-container-panier-vide {
+    background-color:moccasin;
+    text-align: center;
+     
+}
 .total{
     justify-content: start;
-}
+} */
 
 footer {
     margin-top: 53px;
