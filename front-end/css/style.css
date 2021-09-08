@@ -179,6 +179,35 @@ nav {
     background-color: cornflowerblue;
 }
 
+.card__form {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    padding: 15px;
+    margin: 5% 15% 5% 15%;
+    background-color:linen;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+ 
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+     width: 90%;
+    padding-left: 130px;
+}
+
+.command__button {
+    border-radius: 30px;
+    padding: 10px;
+    width: auto;
+    margin-left: 40rem;
+    margin-right: 40rem;
+    margin-top: 20px;
+}
+
 footer {
     position: fixed;
     bottom: 0;
@@ -223,9 +252,6 @@ footer {
 
      #table__panier{
         margin: 0.1rem;
-        /* display: flex;
-        flex-direction: row;
-     */
     }
      .container-recapitulatif {
         display: flex;
@@ -238,12 +264,18 @@ footer {
     .info {
         padding: 2px;
     }
+
+    #table__total {
+         margin: 15px 0px 15px -20px;
+         width: auto;
+    }
    .container-montant-total {
         display: flex;
         flex-direction: row;
         justify-content:space-between;
-        margin: 15px 0 15px 0;
+        /* margin: 15px 5px 15px 25px; */
         max-height: 8vh;
+      
     }
      
     
@@ -273,10 +305,23 @@ footer {
         height: 8vh;
         font-size: initial;
     } 
-    /* footer {
-        margin-top: 5.5rem;
+    .card__form {
+        margin: 2% 2% 40% 2;
+
+    }
+
+    .form {
+         width: 100%;
+        padding-left: 0;
+    }
     
-    } */
+    .command__button {
+        margin: 20px 0 20px 0;
+    }
+
+    footer {
+        position: relative;
+    }
 
 }
 
@@ -306,13 +351,38 @@ footer {
         margin: 2%;
     }
     #productNumber {
-       margin-top 2px;
+       margin-top: 2px;
     }
 
-      .container-panier-vide {
+    .container-montant-total {
+        justify-content:space-around;
+        margin: 15px 5px 15px 45px;
+        width: 90%;
+        max-height: 8vh;
+    }
+
+    .container-panier-vide {
        max-width: 90vw;
        max-height: 50vh;
        margin: 2%;
 
+    }
+
+    .card__form {
+        margin: 2% 2% 40% 2;
+
+    }
+
+    .form {
+         width: 100%;
+        padding-left: 0;
+    }
+    
+    .command__button {
+        margin: 20px 0 20px 0;
+    }
+
+    footer {
+        position: relative;
     }
 }

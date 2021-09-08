@@ -53,17 +53,16 @@
     <!--Header End-->
 
     <!--Main Container-->
-
 <div class="table">
     <h2 class="text-center" id="text-panier">Votre panier
-        <img src="img/shopping-basket-solid.svg" id="panier" alt="icone panier"></h2> 
-<div id="table__panier">
-    <div class="product-container-panier">
+        <img src="img/shopping-basket-solid.svg" id="panier" alt="icone panier"></h2>
+    <div id="table__panier">
+        <div class="product-container-panier">
 
-        <!-- dynamique content panier.js-->
+            <!-- dynamique content panier.js-->
 
+        </div>
     </div>
-</div>
     <div id="table__total">
         <!-- dynamique total panier.js-->
     </div>
@@ -72,8 +71,44 @@
         <button class="ajout "><a href="index.html" class=" text-white">Ajouter des produits</a></button>
         <button class="supprimer"><a href="panier.html" class=" text-white">Vider le panier</a></button>
     </div>
-
 </div>
+
+    <div class="card__form">
+        <h2 class="text-center">Votre adresse de livraison</h2>
+        <form class="form">
+           
+                <label for="name">Prénom :</label>
+                <input type="text" id="name" name="user_name" placeholder="Prénom" required>
+           
+            
+                <label for="lastname">Nom :</label>
+                <input type="text" id="lastname" name="user_lastname" placeholder="Nom" required>
+            
+                <label for="postal">Code postal :</label>
+                <input type="text" id="postal" name="user_postal"  placeholder="Code postal" required>
+           
+                <label for="city">Ville :</label>
+                <input type="text" id="city" name="user_city"  placeholder="Ville" required>
+         
+                <label for="adress">Adresse :</label>
+                <input type="text" id="adress" name="user_adress"  placeholder="Adresse de livraison" required>
+       
+                <label for="mail">Adresse mail :</label>
+                <input type="email" id="mail" name="user_mail" placeholder="Adresse mail" required>
+          
+                <label for="phone">Numéro de téléphone :</label>
+                <input type="tel" id="phone" name="phone" placeholder="Numéro de téléphone" required>
+        
+ 
+        </form>
+        <button class="command__button">
+            <div id="submit">Commander</div>
+        </button>
+    </div>
+
+
+
+
    <!--Main Container-->
 
 
