@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" type="image/png" href="img/shopping-cart-solid.svg">
+    <script src="https://kit.fontawesome.com/20c66add5f.js" crossorigin="anonymous"></script>
 
  
     <!-- Bootstrap CSS -->
@@ -54,42 +55,26 @@
 
     <!--Main Container-->
 
+<div class="table">
+    <h2 class="text-center">Votre panier</h2>
 
-     <div class="table">
-       <div class="product-container-panier">
-           <h2>Votre panier</h2> 
-
-           <div class="container-recapitulatif">
-               <div>Quantite: 1
-                   Nom produit: Cross
-               </div>
-                <div>Color: Black
-                    Prix: 10999 e
-                </div>
-                <!-- <div>Quantite: 1</div>
-                <div>Nom produit:</div> 
-                <div>Color</div>
-                <div>Prix</div>  -->
-           </div>
-           <div class="container-montant-total">
-              <div> Montant total - 10999 e</div>
-              <div>Vider le panier</div>
-           </div>
-                <!-- dynamique content panier.js-->
-            <!-- <div class="card table-panier">
-           <div class="panier-title">
-
-            <div>Nom</div><div>color</div><div>quantite</div><div>prix</div><div>supprimer article</div>
-
-           </div>
-     
-          <div class="panier-total">
-
-           </div>
-        </div> -->
+    <div class="product-container-panier">
+      
+        <div class="card container-recapitulatif">
+            <div>Nom produit: Cross</div>
+            <div>Quantite: 1 </div>
+            <div>Color: Black</div>
+            <div>Prix: 10999 e</div>
+            <!-- <div><img src="./img/trash-solid.svg" alt="supprimer produit"></div> -->
+        </div>
+        <div class=" card container-montant-total">
+            <div> Montant total - 10999 e</div>
+           <button class="supprimer"><i class="fas fa-trash">Vider le panier</i></button>
+        </div>
+        <!-- dynamique content panier.js-->
+  
     </div>
-       </div>
-
+</div>
    <!--Main Container-->
 
 

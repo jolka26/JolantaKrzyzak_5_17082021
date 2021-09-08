@@ -90,18 +90,41 @@ nav {
     border-radius: 20px 0 0 20px;
 }
 
-.table {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-row-gap: 1rem;
-    
+.container-recapitulatif {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: auto;
+    /* background-color: rgb(56, 56, 52); */
+    margin:0;
+    padding:10px;
+    border-radius: 5px;
+    text-align: initial;
+   
 }
-/* .product-container-panier {
+
+.container-montant-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: auto;
+    background-color: palevioletred; 
+}
+
+.container-panier-vide {
+    width: auto;
+    background-color: tomato;
+    text-align: center;
+}
+
+/* 
+.product-container-panier {
     display: flex;
     flex-direction: column;
 
 } */
+
+
 
 /* .panier-title {
     display: flex;
