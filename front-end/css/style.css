@@ -158,7 +158,7 @@ nav {
 .container-panier-vide {
     width: auto;
     height: 50vh;
-    background-color: tomato;
+    background-color:silver;
     text-align: center;
     justify-content: center;
 }
