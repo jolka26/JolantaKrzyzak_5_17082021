@@ -29,7 +29,7 @@ function displayProduct(){
     <div class="card">
             <img src="${product.imageUrl}" class="card-img-top" alt="product image">
         <div class="card-body " >
-            <h5 class="product__name">${product.name}</h5>
+            <h5 class="product__name"><strong>${product.name}</strong></h5>
             <p class="product__price">${product.price} €</p>
             <a href='${url2}id=${product._id}' class="btn btn-primary">Voir produit</a>
         </div>

@@ -34,7 +34,7 @@ function getProducts() {
         <img class="card-img-top" id="imgProduit" src="${produit.imageUrl}" alt="meuble en chêne">
     
         <section id="bloc-product">
-            <h2 class="nameProduit"> ${produit.name}</h2>
+            <h2 class="nameProduit"><strong>${produit.name}</strong> </h2>
             <div class="descriptionProduit"> ${produit.description}</div>
             <div class="prixProduit"><strong>${produit.price} €</strong></div>
 
@@ -43,13 +43,13 @@ function getProducts() {
             </select> <br>
             <label for="productNumber">Quantité :</label>
             <input id="productNumber" type="number" name="productNumber" value="1" min="1" max="10">
-
-            <button id="addPanier" data-id=${produit._id}>Ajouter au panier</button> <br>
-
-            <a href="index.html" class="retour">Retour </a>
+            
+            <div id="buttons">
+            <button class="retour"><a href="index.html" >Retour à l'accueil </a></button>
+            <button class="addPanier" data-id=${produit._id}>Ajouter au panier</button> 
+            </div>
         </section>
         </div>
-        
         </div>
     `
     }
@@ -66,7 +66,7 @@ function getProducts() {
 
     function addPanier() {
 
-        const addButton = document.getElementById("addPanier");
+        const addButton = document.querySelector(".addPanier");
 
         const productNumber = document.getElementById("productNumber");
         const productColor = document.getElementById("varnish");
@@ -77,11 +77,7 @@ function getProducts() {
 
             if (productNumber.value > 0 && productNumber.value < 11 ) {
             let votreProduit = {
-                // name: produit.name.innerHTML,
-                // price: produit.price.innerHTML,
-                // number: produit.value, + " €"
-                // color: produit.varnish.value
-
+                
                 name: produit.name,
                 price: produit.price + " €",
                 number: productNumber.value,

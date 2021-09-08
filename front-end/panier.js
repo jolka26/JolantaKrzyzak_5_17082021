@@ -13,7 +13,7 @@ function main() {
 function command() {
 
 
-const positionPanier = document.querySelector(".product-container-panier");
+const positionPanier = document.querySelector("#table__panier");
 //console.log(positionPanier);
 
 if(panier === null){
@@ -21,7 +21,7 @@ if(panier === null){
 const panierVide = `
 
 <div class="card container-panier-vide">
-<div>Panier est vide! </div>
+<div>Panier est vide... </div>
 <a href="index.html">Ajout le produit</a>
 </div>
 `;
@@ -42,7 +42,7 @@ else {
     //console.log( prix2 * panier[j].number);
    
     produitPanier = produitPanier + `
-    <div class="card container-recapitulatif">
+    <div class=" container-recapitulatif">
     <div>Nom produit: ${panier[j].name}</div>
     <div>Quantite:  ${panier[j].number}</div>
     <div>Color:  ${panier[j].color}</div>
@@ -71,15 +71,8 @@ function viderPanier() {
     });
 }
 
-
-
-
-
-
 ///prix total
 
-
- 
 function prixTotal() {
     let allPrice = [];
   
@@ -99,11 +92,12 @@ function prixTotal() {
     const prixTotal = allPrice.reduce(reducer, 0);
     //console.log(prixTotal);
   
-    const totalPrice = document.querySelector(".container-montant-total");
+    const totalPrice = document.querySelector("#table__total");
     
     totalPrice.innerHTML =  `
+     <div class=" card container-montant-total">
     <div id="total"> TOTAL </div>
     <div id="totalprix"><strong>${prixTotal} €</strong></div>
-   
+   </div>
     `
   }

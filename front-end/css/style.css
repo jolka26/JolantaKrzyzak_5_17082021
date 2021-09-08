@@ -4,6 +4,10 @@
     height: auto;  */
     margin: 0;
     padding: 0;
+   
+}
+body {
+    background-color:lightsalmon;
 }
 div {
     font-size: 1.6rem;
@@ -36,7 +40,10 @@ nav {
     padding-bottom: 5px;
     
 }
-
+/* .main {
+    background-color: darkcyan;
+    margin: auto;
+} */
 .title {
     padding: 40px;
 }
@@ -51,7 +58,7 @@ nav {
 .card {
     display: flex;
     flex-direction: column;
-    height: auto;
+    height: 70vh;
     width: 40vw;
     margin: 20px 15px 20px 15px;
     padding: 5px;
@@ -62,10 +69,12 @@ nav {
 
 .card-img-top{
     border-radius: 20px 20px 0 0 ;
+    height: 75%;
 }
 
 .card-body {
     text-align: center;
+    background-color: white;
 }
 .product-container {
    min-height: 80vh;
@@ -73,32 +82,64 @@ nav {
 }
 
 #card-product {
-    display: flex;
-    flex-direction: row;
+    height: 60%;
     text-align: center;
     width: 50vw;
     align-items: center;
     margin: auto;
     justify-content: center;
-    max-height: auto;
- 
+
 }
 
 #imgProduit {
-    height: auto;
-    width: 50%;
+    height: 50vh;
+    width: 100%;
     border-radius: 20px 0 0 20px;
+    margin-bottom: 1rem;
+}
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.addPanier {
+    border-radius: 20px;
+    padding: 8px;
+    background-color: green;
+  }
+
+.retour {
+
+    border-radius: 20px;
+    padding: 8px;
+    background-color: cornflowerblue;
 }
 
+.retour a {
+    color: black;
+}
+.table h2 {
+    margin: 3rem;
+    color: green;
+}
+
+#panier {
+    width: 30px;
+    height: 30px;
+}
+#table__panier{
+    border: 3px solid black;
+    margin: 1.2rem;
+    background-color: linen;
+}
 .container-recapitulatif {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: auto;
-    /* background-color: rgb(56, 56, 52); */
     margin:0;
     padding:10px;
-    border-radius: 5px;
+    border: 2px solid black;
     text-align: initial;
    
 }
@@ -109,13 +150,18 @@ nav {
     justify-content:space-evenly;
     width: auto;
     background-color:rgb(91, 179, 91); 
+    margin: 3rem;
+    height: auto;
 }
 
 .container-panier-vide {
     width: auto;
+    height: 50vh;
     background-color: tomato;
     text-align: center;
+    justify-content: center;
 }
+
 .buttons {
     display: flex;
     justify-content:space-around;
@@ -129,33 +175,12 @@ nav {
 .supprimer {
     border-radius: 40px;
     padding: 10px;
-    background-color: blue;
+    background-color: cornflowerblue;
 }
-/* 
-.product-container-panier {
-    display: flex;
-    flex-direction: column;
-
-} */
-
-
-
-/* .panier-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.product-container-panier-vide {
-    background-color:moccasin;
-    text-align: center;
-     
-}
-.total{
-    justify-content: start;
-} */
 
 footer {
-    margin-top: 53px;
+    margin-top: 8rem;
+    position: relative;
 }
 
 
