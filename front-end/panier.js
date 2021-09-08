@@ -72,12 +72,13 @@ function viderPanier() {
 
 ///prix to tal
 
+ 
 function prixTotal() {
     let allPrice = [];
- 
-for(let k = 0; k < panier.length; k++) {
+  
+  for(let k = 0; k < panier.length; k++) {
     // console.log(panier[k].price);
-
+  
     let price = panier[k].price
     let newPrice = price.substring(0, price.length - 2)
     //console.log(newPrice);
@@ -85,19 +86,16 @@ for(let k = 0; k < panier.length; k++) {
     //console.log(prixProduitDansPanier);
     allPrice.push(prixProduitDansPanier);
     // console.log(allPrice);
-}
+  }
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     const prixTotal = allPrice.reduce(reducer, 0);
     //console.log(prixTotal);
-
+  
     const totalPrice = document.querySelector(".container-montant-total");
     
-    totalPrice.innerHTML = 
-    `
-
-    <div> Montant total - ${prixTotal} €</div>
+    totalPrice.innerHTML =  `
+    <div id="total"> TOTAL </div>
+    <div id="totalprix"><strong>${prixTotal} €</strong></div>
    
     `
- }
-
- 
+  }

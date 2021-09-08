@@ -106,9 +106,9 @@ nav {
 .container-montant-total {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
     width: auto;
-    background-color: palevioletred; 
+    background-color:rgb(91, 179, 91); 
 }
 
 .container-panier-vide {
@@ -116,7 +116,21 @@ nav {
     background-color: tomato;
     text-align: center;
 }
+.buttons {
+    display: flex;
+    justify-content:space-around;
+}
+.ajout {
+    border-radius: 40px;
+    padding: 20px;
+    background-color: green;
+}
 
+.supprimer {
+    border-radius: 40px;
+    padding: 10px;
+    background-color: blue;
+}
 /* 
 .product-container-panier {
     display: flex;
