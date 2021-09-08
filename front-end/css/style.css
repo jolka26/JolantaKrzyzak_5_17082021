@@ -69,7 +69,7 @@ nav {
 
 .card-img-top{
     border-radius: 20px 20px 0 0 ;
-    height: 75%;
+    height: 70%;
 }
 
 .card-body {
@@ -94,7 +94,7 @@ nav {
 #imgProduit {
     height: 50vh;
     width: 100%;
-    border-radius: 20px 0 0 20px;
+    border-radius: 20px;
     margin-bottom: 1rem;
 }
 #buttons {
@@ -179,8 +179,9 @@ nav {
 }
 
 footer {
-    margin-top: 8rem;
     position: relative;
+    margin-top: 193px;
+
 }
 
 
@@ -234,42 +235,45 @@ footer {
     .info {
         padding: 2px;
     }
-   /* .container-montant-total {
+   .container-montant-total {
         display: flex;
         flex-direction: row;
-        justify-content:space-evenly;
-        width: auto;
-        background-color:rgb(91, 179, 91); 
-        margin: 3rem;
-        height: auto;
-    } */
-     /*
+        justify-content:space-between;
+        margin: 15px 0 15px 0;
+        max-height: 8vh;
+    }
+     
     
     .container-panier-vide {
-        width: auto;
-        height: 50vh;
-        background-color: tomato;
-        text-align: center;
-        justify-content: center;
+       max-width: 90vw;
+       max-height: 50vh;
+       margin: 2%;
+
     }
-    */
-     /*
+   
+    
     .buttons {
+        margin: 15px;
         display: flex;
         justify-content:space-around;
     }
     .ajout {
-        border-radius: 40px;
-        padding: 20px;
+        border-radius: 20px;
+        padding: 8px;
         background-color: green;
+        height: 8vh;
+        font-size: initial;
     }
     
     .supprimer {
-        border-radius: 40px;
-        padding: 10px;
-        background-color: cornflowerblue;
+        border-radius: 20px;
+        height: 8vh;
+        font-size: initial;
+    } 
+    /* footer {
+        margin-top: 5.5rem;
+    
     } */
-
 
 }
 
@@ -300,5 +304,12 @@ footer {
     }
     #productNumber {
        margin-top 2px;
+    }
+
+      .container-panier-vide {
+       max-width: 90vw;
+       max-height: 50vh;
+       margin: 2%;
+
     }
 }
