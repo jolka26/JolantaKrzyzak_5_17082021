@@ -8,6 +8,7 @@ function main() {
     command();
     viderPanier();
     prixTotal();
+    afficherFormulaire();
 }
 
 function command() {
@@ -101,3 +102,81 @@ function prixTotal() {
    </div>
     `
   }
+
+  function afficherFormulaire() {
+
+    const positionForm = document.querySelector(".table");
+
+    const structureForm = `
+    <div class="card__form">
+    <h2 class="text-center">Votre adresse de livraison</h2>
+    <form class="form">
+       
+            <label for="firstName">Prénom:</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Prénom" required>
+        
+            <label for="lastName">Nom:</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Nom" required>
+        
+            <label for="adress">Adresse:</label>
+            <input type="text" id="adress" name="adress"  placeholder="Adresse de livraison" required>
+   
+            <label for="codePostal">Code postal:</label>
+            <input type="text" id="codePostal" name="codePostal"  placeholder="Code postal" required>
+       
+            <label for="city">Ville:</label>
+            <input type="text" id="city" name="city"  placeholder="Ville" required>
+         
+            <label for="email">Adresse mail:</label>
+            <input type="email" id="email" name="email" placeholder="Adresse mail" required>
+    
+
+    </form>
+    <button class="command__button">Commander</button>
+</div>
+    `
+
+    positionForm.insertAdjacentHTML("afterend", structureForm)
+  }
+
+const btnOrder = document.querySelector(".command__button");
+
+btnOrder.addEventListener("click", (event) => {
+    event.preventDefault();
+
+
+//     localStorage.setItem("firstName", document.querySelector("#firstName").value);
+//     localStorage.setItem("lastName", document.querySelector("#lastName").value);
+//     localStorage.setItem("adress", document.querySelector("#adress").value);
+//     localStorage.setItem("codePostal", document.querySelector("#codePostal").value);
+//     localStorage.setItem("city", document.querySelector("#city").value);
+//     localStorage.setItem("email", document.querySelector("#email").value);
+
+// //    console.log(document.querySelector("#firstName").value);
+// //    console.log(document.querySelector("#lastName").value);
+// //    console.log(document.querySelector("#adress").value);
+// //    console.log(document.querySelector("#codePostal").value);
+// //    console.log(document.querySelector("#city").value);
+// //    console.log(document.querySelector("#mail").value);
+
+// const form = {
+//     firstName: localStorage.getItem("firstName"),
+//     lastName: localStorage.getItem("lastName"),
+//     adress: localStorage.getItem("adress"),
+//     codePostal: localStorage.getItem("codePostal"),
+//     city: localStorage.getItem("city"),
+//     email: localStorage.getItem("email"),
+// }
+// console.log(form);
+
+const objetEnvoyer = {
+    panier,
+    // form
+}
+// console.log(objetEnvoyer);
+
+})
+
+
+
+ 
