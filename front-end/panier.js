@@ -9,6 +9,8 @@ function main() {
     viderPanier();
     prixTotal();
     afficherFormulaire();
+    order();
+ 
 }
 
 function command() {
@@ -110,13 +112,13 @@ function prixTotal() {
     const structureForm = `
     <div class="card__form">
     <h2 class="text-center">Votre adresse de livraison</h2>
-    <form class="form">
+    <form name="RegForm" class="form">
        
             <label for="firstName">Prénom:</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Prénom" required>
+            <input type="text" id="firstName" name="firstName" placeholder="Prénom" minlength='2' maxlength='20' required>
         
             <label for="lastName">Nom:</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Nom" required>
+            <input type="text" id="lastName" name="lastName" placeholder="Nom" maxlength='20' required>
         
             <label for="adress">Adresse:</label>
             <input type="text" id="adress" name="adress"  placeholder="Adresse de livraison" required>
@@ -139,44 +141,64 @@ function prixTotal() {
     positionForm.insertAdjacentHTML("afterend", structureForm)
   }
 
+
+
+
+function order(){
 const btnOrder = document.querySelector(".command__button");
 
 btnOrder.addEventListener("click", (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
+    const client = {
+        firstName: document.querySelector("#firstName").value,
+        lastName: document.querySelector("#lastName").value,
+        adress:  document.querySelector("#adress").value,
+        codePostal: document.querySelector("#codePostal").value,
+        city: document.querySelector("#city").value,
+        email: document.querySelector("#email").value
+    }
+    console.log("client");
+    console.log(client);
 
-//     localStorage.setItem("firstName", document.querySelector("#firstName").value);
-//     localStorage.setItem("lastName", document.querySelector("#lastName").value);
-//     localStorage.setItem("adress", document.querySelector("#adress").value);
-//     localStorage.setItem("codePostal", document.querySelector("#codePostal").value);
-//     localStorage.setItem("city", document.querySelector("#city").value);
-//     localStorage.setItem("email", document.querySelector("#email").value);
+///validation form
 
-// //    console.log(document.querySelector("#firstName").value);
-// //    console.log(document.querySelector("#lastName").value);
-// //    console.log(document.querySelector("#adress").value);
-// //    console.log(document.querySelector("#codePostal").value);
-// //    console.log(document.querySelector("#city").value);
-// //    console.log(document.querySelector("#mail").value);
-
-// const form = {
-//     firstName: localStorage.getItem("firstName"),
-//     lastName: localStorage.getItem("lastName"),
-//     adress: localStorage.getItem("adress"),
-//     codePostal: localStorage.getItem("codePostal"),
-//     city: localStorage.getItem("city"),
-//     email: localStorage.getItem("email"),
-// }
-// console.log(form);
-
-const objetEnvoyer = {
-    panier,
-    // form
+function validFirstName() {
+    const firstName = client.firstName;
+    if(/^[a-zA-Z]{3,20}$/.test(firstName)) {
+        // console.log("valide");
+        return true;
+    }else {
+        // console.log("KO");
+        alert("Veuillez vous remplir champ prénom \nChiffre et symbole ne sont pas autorisé");
+        return false;
+    }
 }
-// console.log(objetEnvoyer);
-
-})
 
 
+// console.log(firstName);
 
- 
+
+/////fin validation form
+
+if(validFirstName()){
+    localStorage.setItem("client", JSON.stringify(client)); 
+}else {
+    alert("Veuillez bien remplir le formulaire de livraison");
+}
+
+   
+  
+    const objetEnvoyer = {
+        panier,
+        client
+    }
+    // console.log("objetEnvoyer");
+    // console.log(objetEnvoyer);
+
+    })
+
+}
+
+
+
