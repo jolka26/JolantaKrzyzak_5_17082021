@@ -98,6 +98,12 @@ nav {
     border-radius: 20px;
     margin-bottom: 1rem;
 }
+
+.addConfirmation {
+    background-color: green;
+    color: white;
+   
+}
 #buttons {
     display: flex;
     justify-content: space-between;
