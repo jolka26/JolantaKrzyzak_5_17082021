@@ -16,7 +16,7 @@ function main() {
 function command() {
 
 
-const positionPanier = document.querySelector("#table__panier");
+const positionPanier = document.querySelector("#table__panier")
 //console.log(positionPanier);
 
 if(panier === null){
@@ -27,8 +27,8 @@ const panierVide = `
 <div>Panier est vide... </div>
 <a href="index.html">Ajout le produit</a>
 </div>
-`;
-positionPanier.innerHTML = panierVide;
+`
+positionPanier.innerHTML = panierVide
 }
 
 else {
@@ -39,8 +39,8 @@ else {
   for(j=0; j< panier.length; j++){
     //   console.log(panier.length);
 
-    let prix = panier[j].price;
-    let prix2 = parseInt(prix.substring(0, prix.length -2));
+    let prix = panier[j].price
+    let prix2 = parseInt(prix.substring(0, prix.length -2))
 
     //console.log( prix2 * panier[j].number);
    
@@ -55,7 +55,7 @@ else {
 
   }
   if(j == panier.length){
-  positionPanier.innerHTML = produitPanier;
+  positionPanier.innerHTML = produitPanier
   }
 }
 
@@ -66,11 +66,11 @@ else {
 //surprimer produits 
 function viderPanier() {
 
-    const btnViderPanier = document.querySelector(".supprimer");
+    const btnViderPanier = document.querySelector(".supprimer")
 
     btnViderPanier.addEventListener("click", (event) => {
         
-        localStorage.clear();
+        localStorage.clear()
     });
 }
 
@@ -86,16 +86,16 @@ function prixTotal() {
     let newPrice = price.substring(0, price.length - 2)
     // //console.log(newPrice);
     let priceInt = parseInt(newPrice)
-    let prixProduitDansPanier = priceInt * panier[k].number;
+    let prixProduitDansPanier = priceInt * panier[k].number
     // console.log("mon prix: " + prixProduitDansPanier);
-    allPrice.push(prixProduitDansPanier);
+    allPrice.push(prixProduitDansPanier)
     // console.log(allPrice);
   }
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    const prixTotal = allPrice.reduce(reducer, 0);
+    const reducer = (accumulator, currentValue) => accumulator + currentValue
+    const prixTotal = allPrice.reduce(reducer, 0)
     //console.log(prixTotal);
   
-    const totalPrice = document.querySelector("#table__total");
+    const totalPrice = document.querySelector("#table__total")
     
     totalPrice.innerHTML =  `
      <div class=" card container-montant-total">
@@ -107,11 +107,13 @@ function prixTotal() {
 
   function afficherFormulaire() {
 
-    const positionForm = document.querySelector(".table");
+    const positionForm = document.querySelector(".table")
 
     const structureForm = `
     <div class="card__form">
-    <h2 class="text-center">Votre adresse de livraison</h2>
+    <h2 class="text-center">Votre adresse de livraison </h2> 
+    <span id="formVide" class="infoFormVide"> </span>
+   
     <form name="RegForm" class="form">
        
             <label for="firstName">Prénom:</label><span id="prenomVide" class="infoVide"> </span>
@@ -145,7 +147,7 @@ function prixTotal() {
 
 
 function order(){
-const btnOrder = document.querySelector(".command__button");
+const btnOrder = document.querySelector(".command__button")
 
 btnOrder.addEventListener("click", (event) => {
     // event.preventDefault();
@@ -158,12 +160,12 @@ btnOrder.addEventListener("click", (event) => {
         city: document.querySelector("#city").value,
         email: document.querySelector("#email").value
     }
-    console.log("client");
-    console.log(client);
+    // console.log("client");
+    // console.log(client);
 
 ///validation form
 
-const regex =  (value) => {
+const regex = (value) => {
     return /^[a-zA-Z]{3,20}$/.test(value)
 }
 
@@ -173,7 +175,6 @@ const regexPostal = (value) => {
 
 const regexEmail = (value) => {
     return /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/.test(value)
-
 }
 
 const regexAddresse = (value) => {
@@ -181,123 +182,113 @@ const regexAddresse = (value) => {
 }
 
 function champVide(querySelector) {
-    document.querySelector(`#${querySelector}`).textContent = " ";
+    document.querySelector(`#${querySelector}`).textContent = ""
 }
 
 function champVideText(querySelector) {
-    document.querySelector(`#${querySelector}`).textContent = "Veuillez vous remplir ce champ ";
+    document.querySelector(`#${querySelector}`).textContent = "Veuillez vous remplir ce champ "
 }
 
+
 function validFirstName() {
-    const firstName = client.firstName;
+    const firstName = client.firstName
+
     if(regex(firstName)) {
-        console.log("prenom valide");
-        champVide("prenomVide");
-        return true;
+        champVide("prenomVide")
+        return true
     }else {
-        console.log("prenom KO");
-        champVideText("prenomVide");
-        return false;
+        champVideText("prenomVide")
+        return false
     }
 }
 
 function validLastName() {
-    const lastName = client.lastName;
+    const lastName = client.lastName
+
     if(regex(lastName)) {
-        console.log("nom valide");
-        champVide("nomVide");
-        return true;
+        champVide("nomVide")
+        return true
     }else {
-        console.log("nom KO");
-        champVideText("nomVide");
-        return false;
+        champVideText("nomVide")
+        return false
     }  
 }
-function validAddresse() {
 
-    const address = client.address;
+function validAddresse() {
+    const address = client.address
+
     if(regexAddresse(address)) {
-        console.log("address valide");
-        champVide("addressVide");
-        return true;
+        champVide("addressVide")
+        return true
     }else {
-        console.log("address KO");
-        champVideText("addressVide");
-        return false;
- 
-}
+        champVideText("addressVide")
+        return false
+    }
 }
 
 function validCodePostale() {
-    const codePostal = client.codePostal;
+    const codePostal = client.codePostal
+
     if(regexPostal(codePostal)) {
-        console.log("code postale valide");
-        champVide("codePostaleVide");
-        return true;
+        champVide("codePostaleVide")
+        return true
     }else {
-        console.log("code postale KO");
-        champVideText("codePostaleVide");
-        return false;
+        champVideText("codePostaleVide")
+        return false
     }  
 }
 
-
-
 function validVille() {
+    const city = client.city
 
-    const city = client.city;
     if(regex(city)) {
-        console.log("city valide");
-        champVide("villeVide");
-        return true;
+        champVide("villeVide")
+        return true
     }else {
-        console.log("city KO");
-        champVideText("villeVide");
-        return false;
- 
+        champVideText("villeVide")
+        return false
+    }
 }
-}
-
 
 function validEmail() {
+    const email = client.email
 
-    const email = client.email;
     if(regexEmail(email)) {
-        console.log("email valide");
-        champVide("emailVide");
-        return true;
+        champVide("emailVide")
+        return true
     }else {
-        console.log("email KO");
-        champVideText("emailVide");
-        return false;
- 
-}
+        champVideText("emailVide")
+        return false
+    }
 }
 
-
-
-
-// console.log(firstName);
-
-
-/////fin validation form
 
 if(validFirstName() && validLastName() && validAddresse() && validCodePostale() && validVille() && validEmail() ){
-    localStorage.setItem("client", JSON.stringify(client)); 
+    champVide("formVide")
+    localStorage.setItem("client", JSON.stringify(client))
 }else {
-    alert("Veuillez bien remplir le formulaire de livraison");
+    document.querySelector("#formVide").textContent = "Veuillez vous remplir formulaire "
 }
+/////fin validation form
+// envoyer en server 
 
-   
-  
-    const objetEnvoyer = {
-        panier,
-        client
-    }
-    // console.log("objetEnvoyer");
-    // console.log(objetEnvoyer);
 
-    })
+// const objetEnvoyer = {
+//  client,
+//  panier,
+    
+// }
+//     console.log("objetEnvoyer");
+//     console.log(objetEnvoyer);
+
+//  const promise = fetch(`http://localhost:3000/api/furniture/order` , {
+//         method: "POST",
+//         body: JSON.stringify(objetEnvoyer),
+//         headers: {
+//             "Content-type" : "application/json",
+//         },
+//     })
+})
 
 }
 

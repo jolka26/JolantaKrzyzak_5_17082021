@@ -207,7 +207,11 @@ nav {
 }
 
 .infoVide {
-color: red;
+    color: red;
+}
+.infoFormVide {
+    color: red;
+    text-align: center;
 }
 
 footer {
