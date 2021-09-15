@@ -114,22 +114,22 @@ function prixTotal() {
     <h2 class="text-center">Votre adresse de livraison</h2>
     <form name="RegForm" class="form">
        
-            <label for="firstName">Prénom:</label>
+            <label for="firstName">Prénom:</label><span id="prenomVide"> </span>
             <input type="text" id="firstName" name="firstName" placeholder="Prénom" minlength='2' maxlength='20' required>
         
-            <label for="lastName">Nom:</label>
+            <label for="lastName">Nom:</label><span id="nomVide"> </span>
             <input type="text" id="lastName" name="lastName" placeholder="Nom" maxlength='20' required>
         
-            <label for="adress">Adresse:</label>
-            <input type="text" id="adress" name="adress"  placeholder="Adresse de livraison" required>
+            <label for="address">Adresse:</label><span id="addressVide"> </span>
+            <input type="text" id="address" name="address"  placeholder="Adresse de livraison" required>
    
-            <label for="codePostal">Code postal:</label>
+            <label for="codePostal">Code postal:</label><span id="codePostaleVide"> </span>
             <input type="text" id="codePostal" name="codePostal"  placeholder="Code postal" required>
        
-            <label for="city">Ville:</label>
+            <label for="city">Ville:</label><span id="villeVide"> </span>
             <input type="text" id="city" name="city"  placeholder="Ville" required>
          
-            <label for="email">Adresse mail:</label>
+            <label for="email">Adresse mail:</label><span id="emailVide"> </span>
             <input type="email" id="email" name="email" placeholder="Adresse mail" required>
     
 
@@ -153,7 +153,7 @@ btnOrder.addEventListener("click", (event) => {
     const client = {
         firstName: document.querySelector("#firstName").value,
         lastName: document.querySelector("#lastName").value,
-        adress:  document.querySelector("#adress").value,
+        address:  document.querySelector("#address").value,
         codePostal: document.querySelector("#codePostal").value,
         city: document.querySelector("#city").value,
         email: document.querySelector("#email").value
@@ -171,6 +171,15 @@ const regexPostal = (value) => {
     return /^[0-9]{5}$/.test(value)
 }
 
+const regexEmail = (value) => {
+    return /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/.test(value)
+
+}
+
+const regexAddresse = (value) => {
+    return /^[A-Za-z0-9\s]{5,60}$/.test(value)
+}
+
 function validFirstName() {
     const firstName = client.firstName;
     if(regex(firstName)) {
@@ -178,7 +187,7 @@ function validFirstName() {
         return true;
     }else {
         console.log("prenom KO");
-        alert("Veuillez vous remplir champ prénom ");
+        document.getElementById("prenomVide").textContent = "Veuillez vous remplir champ prénom "
         return false;
     }
 }
@@ -190,7 +199,7 @@ function validLastName() {
         return true;
     }else {
         console.log("nom KO");
-        alert("Veuillez vous remplir champ nom ");
+        document.getElementById("nomVide").textContent = "Veuillez vous remplir champ nom "
         return false;
     }  
 }
@@ -203,11 +212,52 @@ function validCodePostale() {
         return true;
     }else {
         console.log("code postale KO");
-        alert("Code postale non valide ");
+        document.getElementById("codePostaleVide").textContent = "Veuillez vous remplir champ code postale "
         return false;
     }  
 }
 
+function validEmail() {
+
+        const email = client.email;
+        if(regexEmail(email)) {
+            console.log("email valide");
+            return true;
+        }else {
+            console.log("email KO");
+            document.getElementById("emailVide").textContent = "Veuillez vous remplir champ email "
+            return false;
+     
+    }
+}
+
+function validAddresse() {
+
+    const address = client.address;
+    if(regexAddresse(address)) {
+        console.log("address valide");
+        return true;
+    }else {
+        console.log("address KO");
+        document.getElementById("addressVide").textContent = "Veuillez vous remplir champ adress "
+        return false;
+ 
+}
+}
+
+function validVille() {
+
+    const city = client.city;
+    if(regex(city)) {
+        console.log("city valide");
+        return true;
+    }else {
+        console.log("city KO");
+        document.getElementById("villeVide").textContent = "Veuillez vous remplir champ ville "
+        return false;
+ 
+}
+}
 
 
 
@@ -216,7 +266,7 @@ function validCodePostale() {
 
 /////fin validation form
 
-if(validFirstName() && validLastName() && validCodePostale() ){
+if(validFirstName() && validLastName() && validCodePostale() && validEmail() && validAddresse() && validVille()){
     localStorage.setItem("client", JSON.stringify(client)); 
 }else {
     alert("Veuillez bien remplir le formulaire de livraison");
