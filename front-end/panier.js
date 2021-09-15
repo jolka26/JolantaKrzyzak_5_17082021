@@ -195,6 +195,9 @@ function validFirstName() {
 
     if(regex(firstName)) {
         champVide("prenomVide")
+
+    // console.log("firstName");
+    // console.log(firstName)
         return true
     }else {
         champVideText("prenomVide")
@@ -262,32 +265,154 @@ function validEmail() {
     }
 }
 
-
 if(validFirstName() && validLastName() && validAddresse() && validCodePostale() && validVille() && validEmail() ){
     champVide("formVide")
     localStorage.setItem("client", JSON.stringify(client))
-}else {
+   
+                       
+}else{
     document.querySelector("#formVide").textContent = "Veuillez vous remplir formulaire "
 }
-/////fin validation form
-// envoyer en server 
 
 
-// const objetEnvoyer = {
-//  client,
-//  panier,
-    
+const objetEnvoyer = {
+    client,
+    panier,
+       
+   }
+   
+       console.log("objetEnvoyer");
+       console.log(objetEnvoyer);
+
+
+       const donnesServer = fetch("http://localhost:3000/api/furniture/order" , {
+                               method: "POST",
+                               body: JSON.stringify(objetEnvoyer),
+                               headers: {
+                                   "Content-type" : "application/json",
+                               }
+                           })
+                       
+                           console.log("donnesServer");
+                           console.log(donnesServer);
+                   
+
+
+
+
+
+
+   
+//     const donnesServer = fetch("http://localhost:3000/api/furniture/order" , {
+//            method: "POST",
+//            body: JSON.stringify(objetEnvoyer),
+//            headers: {
+//                "Content-type" : "application/json",
+//            }
+//        })
+   
+//        console.log("donnesServer");
+//        console.log(donnesServer);
+
+
+
+
+
+// if (!validFirstName() && !validLastName() && !validAddresse() && !validVille() && !validEmail()) {
+//     document.querySelector("#formVide").textContent = "Veuillez vous remplir formulaire "
+// } else {
+//     champVide("formVide")
+//     localStorage.setItem("client", JSON.stringify(client))
+
+//     const objetEnvoyer = {
+//                 client,
+//                 panier,
+                   
+//                }
+               
+//                    console.log("objetEnvoyer");
+//                    console.log(objetEnvoyer);
+               
+//                 const donnesServer = fetch("http://localhost:3000/api/furniture/order" , {
+//                        method: "POST",
+//                        body: JSON.stringify(objetEnvoyer),
+//                        headers: {
+//                            "Content-type" : "application/json",
+//                        }
+//                    })
+               
+//                    console.log("donnesServer");
+//                    console.log(donnesServer);
+//             }   
+
+
+// if (!validFirstName() && !validLastName() && !validAddresse() && !validVille() && !validEmail()) {
+//       document.querySelector("#formVide").textContent = "Veuillez vous remplir formulaire "
+// }else{
+//     champVide("formVide")
+//     localStorage.setItem("client", JSON.stringify(client))
 // }
-//     console.log("objetEnvoyer");
-//     console.log(objetEnvoyer);
+ 
+    // const objetEnvoyer = {
+    //     client,
+    //     panier,
+           
+    //    }
+       
+    //        console.log("objetEnvoyer");
+    //        console.log(objetEnvoyer);
+       
+    //     const donnesServer = fetch("http://localhost:3000/api/furniture/order" , {
+    //            method: "POST",
+    //            body: JSON.stringify(objetEnvoyer),
+    //            headers: {
+    //                "Content-type" : "application/json",
+    //            }
+    //        })
 
-//  const promise = fetch(`http://localhost:3000/api/furniture/order` , {
-//         method: "POST",
-//         body: JSON.stringify(objetEnvoyer),
-//         headers: {
-//             "Content-type" : "application/json",
-//         },
-//     })
+    // function getProducts() {
+    //     return fetch(`http://localhost:3000/api/furniture/${id}`)
+    //      .then(function(httpBodyResponse) {
+    //        return httpBodyResponse.json()
+    //      })
+    //      .catch(function(error) {
+    //        alert ("error quelque chose ne va pas.. êtes-vous connecté à api ?")
+    //      })
+    //      .then(function(result) {
+    //          const produit = result;
+    //          const color = result.varnish;
+       
+    //        console.log("donnesServer");
+    //        console.log(donnesServer);
+     
+
+
+ 
+    // const objetEnvoyer = {
+    //     client,
+    //     panier,
+           
+    //    }
+       
+    //        console.log("objetEnvoyer");
+    //        console.log(objetEnvoyer);
+       
+        // const donnesServer = fetch('http://localhost:3000/api/furniture/order' , {
+        //        method: "POST",
+        //        body: JSON.stringify(objetEnvoyer),
+        //        headers: {
+        //            "Content-type" : "application/json",
+        //        }
+        //    })
+       
+        //    console.log("donnesServer");
+        //    console.log(donnesServer);
+     
+///fin validation form
+
+
+
+    
 })
 
 }
