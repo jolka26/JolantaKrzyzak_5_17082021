@@ -163,14 +163,30 @@ btnOrder.addEventListener("click", (event) => {
 
 ///validation form
 
+const regex =  (value) => {
+    return /^[a-zA-Z]{3,20}$/.test(value)
+}
+
 function validFirstName() {
     const firstName = client.firstName;
-    if(/^[a-zA-Z]{3,20}$/.test(firstName)) {
-        // console.log("valide");
+    if(regex(firstName)) {
+        console.log("prenom valide");
         return true;
     }else {
-        // console.log("KO");
-        alert("Veuillez vous remplir champ prénom \nChiffre et symbole ne sont pas autorisé");
+        console.log("prenom KO");
+        alert("Veuillez vous remplir champ prénom ");
+        return false;
+    }
+}
+
+function validLastName() {
+    const lastName = client.lastName;
+    if(regex(lastName)) {
+        console.log("nom valide");
+        return true;
+    }else {
+        console.log("nom KO");
+        alert("Veuillez vous remplir champ nom ");
         return false;
     }
 }
@@ -181,7 +197,7 @@ function validFirstName() {
 
 /////fin validation form
 
-if(validFirstName()){
+if(validFirstName() && validLastName()){
     localStorage.setItem("client", JSON.stringify(client)); 
 }else {
     alert("Veuillez bien remplir le formulaire de livraison");
