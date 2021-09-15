@@ -180,14 +180,23 @@ const regexAddresse = (value) => {
     return /^[A-Za-z0-9\s]{5,60}$/.test(value)
 }
 
+function champVide(querySelector) {
+    document.querySelector(`#${querySelector}`).textContent = " ";
+}
+
+function champVideText(querySelector) {
+    document.querySelector(`#${querySelector}`).textContent = "Veuillez vous remplir ce champ ";
+}
+
 function validFirstName() {
     const firstName = client.firstName;
     if(regex(firstName)) {
         console.log("prenom valide");
+        champVide("prenomVide");
         return true;
     }else {
         console.log("prenom KO");
-        document.getElementById("prenomVide").textContent = "Veuillez vous remplir champ prénom "
+        champVideText("prenomVide");
         return false;
     }
 }
@@ -196,68 +205,75 @@ function validLastName() {
     const lastName = client.lastName;
     if(regex(lastName)) {
         console.log("nom valide");
+        champVide("nomVide");
         return true;
     }else {
         console.log("nom KO");
-        document.getElementById("nomVide").textContent = "Veuillez vous remplir champ nom "
+        champVideText("nomVide");
         return false;
     }  
 }
-
-
-function validCodePostale() {
-    const codePostal = client.codePostal;
-    if(regexPostal(codePostal)) {
-        console.log("code postale valide");
-        return true;
-    }else {
-        console.log("code postale KO");
-        document.getElementById("codePostaleVide").textContent = "Veuillez vous remplir champ code postale "
-        return false;
-    }  
-}
-
-function validEmail() {
-
-        const email = client.email;
-        if(regexEmail(email)) {
-            console.log("email valide");
-            return true;
-        }else {
-            console.log("email KO");
-            document.getElementById("emailVide").textContent = "Veuillez vous remplir champ email "
-            return false;
-     
-    }
-}
-
 function validAddresse() {
 
     const address = client.address;
     if(regexAddresse(address)) {
         console.log("address valide");
+        champVide("addressVide");
         return true;
     }else {
         console.log("address KO");
-        document.getElementById("addressVide").textContent = "Veuillez vous remplir champ adress "
+        champVideText("addressVide");
         return false;
  
 }
 }
+
+function validCodePostale() {
+    const codePostal = client.codePostal;
+    if(regexPostal(codePostal)) {
+        console.log("code postale valide");
+        champVide("codePostaleVide");
+        return true;
+    }else {
+        console.log("code postale KO");
+        champVideText("codePostaleVide");
+        return false;
+    }  
+}
+
+
 
 function validVille() {
 
     const city = client.city;
     if(regex(city)) {
         console.log("city valide");
+        champVide("villeVide");
         return true;
     }else {
         console.log("city KO");
-        document.getElementById("villeVide").textContent = "Veuillez vous remplir champ ville "
+        champVideText("villeVide");
         return false;
  
 }
 }
+
+
+function validEmail() {
+
+    const email = client.email;
+    if(regexEmail(email)) {
+        console.log("email valide");
+        champVide("emailVide");
+        return true;
+    }else {
+        console.log("email KO");
+        champVideText("emailVide");
+        return false;
+ 
+}
+}
+
 
 
 
@@ -266,7 +282,7 @@ function validVille() {
 
 /////fin validation form
 
-if(validFirstName() && validLastName() && validCodePostale() && validEmail() && validAddresse() && validVille()){
+if(validFirstName() && validLastName() && validAddresse() && validCodePostale() && validVille() && validEmail() ){
     localStorage.setItem("client", JSON.stringify(client)); 
 }else {
     alert("Veuillez bien remplir le formulaire de livraison");
