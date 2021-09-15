@@ -206,6 +206,10 @@ nav {
     background-color:cadetblue;
 }
 
+.infoVide {
+color: red;
+}
+
 footer {
     position: fixed;
     bottom: 0;

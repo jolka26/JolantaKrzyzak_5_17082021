@@ -114,22 +114,22 @@ function prixTotal() {
     <h2 class="text-center">Votre adresse de livraison</h2>
     <form name="RegForm" class="form">
        
-            <label for="firstName">Prénom:</label><span id="prenomVide"> </span>
+            <label for="firstName">Prénom:</label><span id="prenomVide" class="infoVide"> </span>
             <input type="text" id="firstName" name="firstName" placeholder="Prénom" minlength='2' maxlength='20' required>
         
-            <label for="lastName">Nom:</label><span id="nomVide"> </span>
+            <label for="lastName">Nom:</label><span id="nomVide" class="infoVide"> </span>
             <input type="text" id="lastName" name="lastName" placeholder="Nom" maxlength='20' required>
         
-            <label for="address">Adresse:</label><span id="addressVide"> </span>
+            <label for="address">Adresse:</label><span id="addressVide" class="infoVide"> </span>
             <input type="text" id="address" name="address"  placeholder="Adresse de livraison" required>
    
-            <label for="codePostal">Code postal:</label><span id="codePostaleVide"> </span>
+            <label for="codePostal">Code postal:</label><span id="codePostaleVide" class="infoVide"> </span>
             <input type="text" id="codePostal" name="codePostal"  placeholder="Code postal" required>
        
-            <label for="city">Ville:</label><span id="villeVide"> </span>
+            <label for="city">Ville:</label><span id="villeVide" class="infoVide"> </span>
             <input type="text" id="city" name="city"  placeholder="Ville" required>
          
-            <label for="email">Adresse mail:</label><span id="emailVide"> </span>
+            <label for="email">Adresse mail:</label><span id="emailVide" class="infoVide"> </span>
             <input type="email" id="email" name="email" placeholder="Adresse mail" required>
     
 
