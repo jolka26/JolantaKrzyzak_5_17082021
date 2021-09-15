@@ -167,6 +167,10 @@ const regex =  (value) => {
     return /^[a-zA-Z]{3,20}$/.test(value)
 }
 
+const regexPostal = (value) => {
+    return /^[0-9]{5}$/.test(value)
+}
+
 function validFirstName() {
     const firstName = client.firstName;
     if(regex(firstName)) {
@@ -188,8 +192,23 @@ function validLastName() {
         console.log("nom KO");
         alert("Veuillez vous remplir champ nom ");
         return false;
-    }
+    }  
 }
+
+
+function validCodePostale() {
+    const codePostal = client.codePostal;
+    if(regexPostal(codePostal)) {
+        console.log("code postale valide");
+        return true;
+    }else {
+        console.log("code postale KO");
+        alert("Code postale non valide ");
+        return false;
+    }  
+}
+
+
 
 
 // console.log(firstName);
@@ -197,7 +216,7 @@ function validLastName() {
 
 /////fin validation form
 
-if(validFirstName() && validLastName()){
+if(validFirstName() && validLastName() && validCodePostale() ){
     localStorage.setItem("client", JSON.stringify(client)); 
 }else {
     alert("Veuillez bien remplir le formulaire de livraison");
