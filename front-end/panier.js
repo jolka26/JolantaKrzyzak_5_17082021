@@ -289,7 +289,7 @@ function order() {
                 .then(function(respons) {
                     return respons.json()
                 })
-                .then(function(responss) {
+                .then(function(respons) {
                     if (window.confirm("Pour valider votre commande clique OK")) {
                         window.location.href = "confirmation.html"
                     } else {
