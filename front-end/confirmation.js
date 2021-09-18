@@ -6,6 +6,8 @@ function main() {
     displayOrder();
 }
 
+/// function qui affiche la confirmation et prix total de la commande, puis vide le local storage
+
 function displayOrder() {
 
     document.querySelector(".confirmation").innerHTML = `
@@ -14,7 +16,8 @@ function displayOrder() {
     <p> Votre commande est passée, elle est en cours de traitement par l'équipe d'ORINOCO.  </p>
     <p>Merci!</p>
     </div>
-    <button class="retour"><a href="index.html" >Retour à l'accueil </a></button>
+    <button class="retour" onclick="window.location.href='index.html'">Retour à l'accueil </button>
     `
     localStorage.clear()
+
 }

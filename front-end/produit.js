@@ -1,10 +1,6 @@
 let params = new URL(document.location).searchParams;
 let id = params.get("id");
-// console.log(id);
-// const productName = document.getElementsByClassName("nameProduit");
-// const productPrice = document.getElementsByClassName("prixProduit");
-// const productNumber = document.getElementById("productNumber");
-// const productColor = document.getElementById("varnish");
+
 
 getProducts();
 
@@ -21,7 +17,6 @@ function getProducts() {
             const produit = result;
             const color = result.varnish;
 
-
             displayProduct();
             addColor();
             addPanier();
@@ -30,13 +25,13 @@ function getProducts() {
 
                 document.getElementById("main").innerHTML += `
         <div class="product-container">
-        <div class="card" id="card-product">
+        <div class="card card-product" id="card-product">
         <img class="card-img-top" id="imgProduit" src="${produit.imageUrl}" alt="meuble en chêne">
       
         <section id="bloc-product">
             <h2 class="nameProduit"><strong>${produit.name}</strong> </h2>
             <div class="descriptionProduit"> ${produit.description}</div>
-            <div class="prixProduit"><strong>${produit.price} €</strong></div>
+            <div class="prixProduit"><strong>Prix: ${produit.price} €</strong></div>
 
             <label for="varnish">Choisir le vernis:</label>
             <select name="varnish" id="varnish">
@@ -46,14 +41,18 @@ function getProducts() {
             <div class="addConfirmation"><span id="addConfirmation"> </span></div>
     
             <div id="buttons">
-            <button class="retour"><a href="index.html" >Retour à l'accueil </a></button>
+            <button class="retour"onclick="window.location.href='index.html'">Retour à l'accueil </button>
             <button class="addPanier" data-id=${produit._id}>Ajouter au panier</button> 
             </div>
         </section>
         </div>
+        
         </div>
+        <button class="panier" onclick="window.location.href='panier.html'">Voir panier </button>
     `
             }
+
+            // function permetre de recuperer- choisir le color/vernis
 
             function addColor() {
 
@@ -64,6 +63,8 @@ function getProducts() {
             `
                 }
             }
+
+            //function addPanier permetre ajouter produit choisi dans notre panier en ecoutant notre methode addEventListener(), apres on cree un cle dans le local storage
 
             function addPanier() {
 
@@ -90,26 +91,14 @@ function getProducts() {
 
                         let panier = [];
 
-                        // const popupConfirmation = () => {
-                        //     if(window.confirm(`${productNumber.value} produit vernis: ${productColor.value} à éte bien ajouté dans le panier!
-                        //      Pour continuer achats cliquer CANCEL, pour consulter votre panier OK`)){
-                        //         window.location.href = "panier.html"
-                        //     }else {
-                        //         window.location.href = "#"
-                        //     }
-                        // }
-
-
-
                         if (localStorage.getItem("products") !== null) {
                             panier = JSON.parse(localStorage.getItem("products"));
                         }
 
                         panier.push(votreProduit);
                         localStorage.setItem("products", JSON.stringify(panier));
-                        // popupConfirmation();
                         document.querySelector("#addConfirmation").textContent = ` ${productNumber.value} produit - ${produit.name}, 
-            vernis: ${productColor.value} à éte bien ajouté dans le panier!`;
+                        vernis: ${productColor.value} à éte bien ajouté dans le panier!`;
                         setTimeout("location.reload(true);", 3000);
                     }
                 });

@@ -1,389 +1,405 @@
-/* CSS */
-
-* {
-    /* width: auto;
-    height: auto;  */
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background-color: lightsalmon;
-}
-
-div {
-    font-size: 1.6rem;
-}
-
-:root {
-    font-size: 62, 5%;
-}
-
-#logo {
-    padding-top: 5px;
-    margin-right: 8px;
-    height: 35px;
-    width: 35px;
-    justify-content: baseline;
-}
-
-nav {
-    height: auto;
-    margin-bottom: 40px;
-}
-
-#navbarContent {
-    text-align: right;
-}
-
-#logo__basket {
-    width: 35px;
-    height: 35px;
-    padding-bottom: 5px;
-}
-
-.main {
-    margin-bottom: 5rem;
-}
-
-.title {
-    padding: 40px;
-}
-
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    height: auto;
-    width: 100%;
-    justify-content: space-evenly;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    height: 60vh;
-    width: 40vw;
-    margin: 20px 10px 20px 10px;
-    padding: 5px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-}
-
-.card-img-top {
-    border-radius: 20px 20px 0 0;
-    height: 70%;
-}
-
-.card-body {
-    text-align: center;
-    background-color: white;
-    overflow: auto;
-}
-
-.product__price {
-    padding: 0;
-    margin: 0;
-}
-
-.product__name {
-    padding: 0;
-    margin: 0;
-}
-
-.product-container {
-    min-height: 80vh;
-}
-
-#card-product {
-    height: 60%;
-    text-align: center;
-    width: 50vw;
-    align-items: center;
-    margin: auto;
-    justify-content: center;
-}
-
-#imgProduit {
-    height: 50vh;
-    width: 100%;
-    border-radius: 20px;
-    margin-bottom: 1rem;
-}
-
-.addConfirmation {
-    background-color: green;
-    color: white;
-}
-
-#buttons {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-}
-
-.addPanier {
-    border-radius: 20px;
-    padding: 8px;
-    background-color: green;
-}
-
-.retour {
-    border-radius: 20px;
-    padding: 8px;
-    background-color: cornflowerblue;
-}
-
-.retour a {
-    color: black;
-}
-
-.table h2 {
-    margin: 3rem;
-    color: green;
-}
-
-#panier {
-    width: 30px;
-    height: 30px;
-}
-
-#table__panier {
-    border: 3px solid black;
-    margin: 1.2rem;
-    background-color: linen;
-}
-
-.container-recapitulatif {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: auto;
-    margin: 0;
-    padding: 10px;
-    border: 2px solid black;
-    text-align: initial;
-}
-
-.container-montant-total {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: auto;
-    background-color: rgb(91, 179, 91);
-    margin: 3rem;
-    height: auto;
-}
-
-.container-panier-vide {
-    width: auto;
-    height: 50vh;
-    background-color: silver;
-    text-align: center;
-    justify-content: center;
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-around;
-}
-
-.ajout {
-    border-radius: 40px;
-    padding: 20px;
-    background-color: green;
-}
-
-.supprimer {
-    border-radius: 40px;
-    padding: 10px;
-    background-color: cornflowerblue;
-}
-
-.card__form {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    width: auto;
-    padding: 15px;
-    margin: 5% 15% 5% 15%;
-    background-color: linen;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    padding-left: 130px;
-}
-
-.command__button {
-    border-radius: 30px;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: cadetblue;
-}
-
-.infoVide {
-    color: red;
-}
-
-.infoFormVide {
-    color: red;
-    text-align: center;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-
-@media screen and (max-width: 425px) {
-    #logo__basket {
-        width: 25px;
-        height: 25px;
-        padding-bottom: 5px;
-    }
-    .title {
-        padding: 2px;
-    }
-    .card {
-        width: 100%;
-        min-height: 30vh;
-        max-height: 50vh;
-    }
-    .card-img-top {
-        border-radius: 20px 20px 0 0;
-        height: 60%;
-    }
-    .card-body {
-        height: auto;
-        overflow: auto;
-        padding: 0;
-    }
-    #card-product {
-        width: auto;
-        margin: 2%;
-    }
-    .table {
-        margin: 0.5rem;
-        width: auto;
-    }
-    #table__panier {
-        margin: 0.1rem;
-    }
-    .container-recapitulatif {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        padding: 0;
-    }
-    .info {
-        padding: 2px;
-    }
-    #table__total {
-        margin: 15px 0px 15px -20px;
-        width: auto;
-    }
-    .container-montant-total {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        /* margin: 15px 5px 15px 25px; */
-        max-height: 8vh;
-    }
-    .container-panier-vide {
-        max-width: 90vw;
-        max-height: 50vh;
-        margin: 2%;
-    }
-    .buttons {
-        margin: 15px;
-        display: flex;
-        justify-content: space-around;
-    }
-    .ajout {
-        border-radius: 20px;
-        padding: 8px;
-        background-color: green;
-        height: 8vh;
-        font-size: initial;
-    }
-    .supprimer {
-        border-radius: 20px;
-        height: 8vh;
-        font-size: initial;
-    }
-    .card__form {
-        margin: 2% 2% 40% 2;
-    }
-    .form {
-        width: 100%;
-        padding-left: 0;
-    }
-    .command__button {
-        margin: 20px 0 20px 0;
-    }
-    footer {
-        position: relative;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #logo__basket {
-        width: 25px;
-        height: 25px;
-        padding-bottom: 5px;
-    }
-    .title {
-        padding: 15px;
-    }
-    .card {
-        width: 80%;
-        height: 60vh;
-    }
-    .card-img-top {
-        border-radius: 20px 20px 0 0;
-        height: 70%;
-    }
-    .card-body {
-        height: auto;
-        overflow: auto;
-        padding: 2px;
-    }
-    #card-product {
-        width: auto;
-        margin: 2%;
-    }
-    #productNumber {
-        margin-top: 2px;
-    }
-    .container-montant-total {
-        justify-content: space-around;
-        margin: 15px 5px 15px 45px;
-        width: 90%;
-        max-height: 8vh;
-    }
-    .container-panier-vide {
-        max-width: 90vw;
-        max-height: 50vh;
-        margin: 2%;
-    }
-    .card__form {
-        margin: 2% 2% 40% 2;
-    }
-    .form {
-        width: 100%;
-        padding-left: 0;
-    }
-    .command__button {
-        margin: 20px 0 20px 0;
-    }
-    footer {
-        position: relative;
-    }
-}
+            /* CSS */
+            
+            * {
+                margin: 0;
+                padding: 0;
+                font-size: 1.2rem;
+            }
+            
+            body {
+                background-color: lightsalmon;
+            }
+            
+            div {
+                font-size: 1.4rem;
+            }
+            
+             :root {
+                font-size: 62, 5%;
+            }
+            
+            #logo {
+                padding-top: 5px;
+                margin-right: 8px;
+                height: 35px;
+                width: 35px;
+                justify-content: baseline;
+            }
+            
+            nav {
+                height: auto;
+                margin-bottom: 40px;
+            }
+            
+            #navbarContent {
+                text-align: right;
+            }
+            
+            #logo__basket {
+                width: 35px;
+                height: 35px;
+                padding-bottom: 5px;
+            }
+            
+            .main {
+                margin-bottom: 5rem;
+            }
+            
+            .title {
+                padding: 40px;
+            }
+            
+            .products {
+                display: flex;
+                flex-wrap: wrap;
+                height: auto;
+                width: 100%;
+                justify-content: space-evenly;
+            }
+            
+            .card {
+                display: flex;
+                flex-direction: column;
+                height: 60vh;
+                width: 40vw;
+                margin: 20px 10px 20px 10px;
+                padding: 5px;
+                background-color: white;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                border-radius: 20px;
+            }
+            
+            .card-img-top {
+                border-radius: 20px 20px 0 0;
+                height: 70%;
+            }
+            
+            .card-body {
+                text-align: center;
+                background-color: white;
+                overflow: auto;
+            }
+            
+            .product__price {
+                padding: 0;
+                margin: 0;
+            }
+            
+            .product__name {
+                padding: 0;
+                margin: 0;
+            }
+            
+            .product-container {
+                min-height: 80vh;
+                margin-bottom: 55px;
+            }
+            
+            #card-product {
+                height: 60%;
+                text-align: center;
+                width: 50vw;
+                align-items: center;
+                margin: auto;
+                justify-content: center;
+            }
+            
+            #imgProduit {
+                height: 50vh;
+                width: 100%;
+                border-radius: 20px;
+                margin-bottom: 1rem;
+            }
+            
+            .addConfirmation {
+                background-color: green;
+                color: white;
+            }
+            
+            #buttons {
+                display: flex;
+                justify-content: space-between;
+                padding: 1rem;
+            }
+            
+            .addPanier {
+                border-radius: 20px;
+                padding: 8px;
+                background-color: green;
+            }
+            
+            .retour {
+                border-radius: 20px;
+                padding: 8px;
+                background-color: cornflowerblue;
+            }
+            
+            .panier {
+                border-radius: 20px;
+                padding: 8px;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .table h2 {
+                margin: 3rem;
+                color: green;
+            }
+            
+            #panier {
+                width: 30px;
+                height: 30px;
+            }
+            
+            #table__panier {
+                border: 3px solid black;
+                margin: 1.2rem;
+                background-color: linen;
+            }
+            
+            .container-recapitulatif {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                width: auto;
+                margin: 0;
+                padding: 10px;
+                border: 2px solid black;
+                text-align: initial;
+            }
+            
+            .container-montant-total {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                width: auto;
+                background-color: rgb(91, 179, 91);
+                margin: 3rem;
+                height: auto;
+            }
+            
+            .container-panier-vide {
+                width: auto;
+                height: 50vh;
+                background-color: silver;
+                text-align: center;
+                justify-content: center;
+            }
+            
+            .buttons {
+                display: flex;
+                justify-content: space-around;
+            }
+            
+            .ajout {
+                border-radius: 40px;
+                padding: 20px;
+                background-color: green;
+            }
+            
+            .supprimer {
+                border-radius: 40px;
+                padding: 10px;
+                background-color: cornflowerblue;
+            }
+            
+            .card__form {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                width: auto;
+                padding: 15px;
+                margin: 5% 15% 5% 15%;
+                background-color: linen;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                border-radius: 20px;
+            }
+            
+            .form {
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+                padding-left: 130px;
+            }
+            
+            .command__button {
+                border-radius: 30px;
+                padding: 10px;
+                margin-top: 20px;
+                background-color: cadetblue;
+            }
+            
+            .infoVide {
+                color: red;
+            }
+            
+            .infoFormVide {
+                color: red;
+                text-align: center;
+            }
+            
+            footer {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                left: 0;
+            }
+            
+            @media screen and (max-width: 425px) {
+                #logo__basket {
+                    width: 25px;
+                    height: 25px;
+                    padding-bottom: 5px;
+                }
+                .title {
+                    padding: 2px;
+                }
+                .card {
+                    width: 100%;
+                    height: auto;
+                }
+                .card-product {
+                    height: auto;
+                }
+                .card-img-top {
+                    border-radius: 20px 20px 0 0;
+                    height: 60%;
+                }
+                .card-body {
+                    height: auto;
+                    overflow: auto;
+                    padding: 0;
+                }
+                #card-product {
+                    width: auto;
+                    min-height: 820px;
+                    height: auto;
+                    margin: 2%;
+                }
+                .table {
+                    margin: 0.5rem;
+                    width: auto;
+                }
+                #table__panier {
+                    margin: 0.1rem;
+                }
+                .container-recapitulatif {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    padding: 0;
+                }
+                .info {
+                    padding: 2px;
+                }
+                #table__total {
+                    margin: 15px 0px 15px -20px;
+                    width: auto;
+                }
+                .container-montant-total {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 15px 5px 15px 45px;
+                    width: 100%;
+                    max-height: 8vh;
+                }
+                .container-panier-vide {
+                    max-width: 90vw;
+                    max-height: 50vh;
+                    margin: 2%;
+                }
+                .buttons {
+                    margin: 15px;
+                    display: flex;
+                    justify-content: space-around;
+                }
+                .ajout {
+                    border-radius: 20px;
+                    padding: 8px;
+                    background-color: green;
+                    height: 8vh;
+                    font-size: 0.6rem;
+                }
+                .supprimer {
+                    border-radius: 20px;
+                    height: 8vh;
+                    font-size: 0.6rem;
+                }
+                /* .panier {
+                    margin: 0px 0 0px 150px;
+                } */
+                .card__form {
+                    margin: 2% 2% 40% 2;
+                }
+                .form {
+                    width: 100%;
+                    padding-left: 0;
+                }
+                .command__button {
+                    margin: 20px 0 20px 0;
+                }
+                footer {
+                    position: relative;
+                }
+            }
+            
+            @media screen and (max-width: 768px) {
+                #logo__basket {
+                    width: 25px;
+                    height: 25px;
+                    padding-bottom: 5px;
+                }
+                .title {
+                    padding: 15px;
+                }
+                .card {
+                    width: 80%;
+                    height: 60vh;
+                }
+                .card-img-top {
+                    border-radius: 20px 20px 0 0;
+                    height: 70%;
+                }
+                .card-body {
+                    height: auto;
+                    overflow: auto;
+                    padding: 2px;
+                }
+                /* .panier {
+                    margin: 0px 0 0px 315px;
+                } */
+                #card-product {
+                    width: auto;
+                    margin: 2%;
+                }
+                #productNumber {
+                    margin-top: 2px;
+                }
+                .container-montant-total {
+                    justify-content: space-around;
+                    max-height: 8vh;
+                }
+                .container-panier-vide {
+                    max-width: 90vw;
+                    max-height: 50vh;
+                    margin: 2%;
+                }
+                .card__form {
+                    margin: 2% 2% 40% 2;
+                }
+                .form {
+                    width: 100%;
+                    padding-left: 0;
+                }
+                .form__h2 {
+                    font-size: 1rem;
+                }
+                .command__button {
+                    margin: 20px 0 20px 0;
+                }
+                footer {
+                    position: relative;
+                }
+            }

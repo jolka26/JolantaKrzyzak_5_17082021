@@ -111,7 +111,7 @@ function afficherFormulaire() {
 
     const structureForm = `
     <div class="card__form">
-    <h2 class="text-center">Votre adresse de livraison </h2> 
+    <h2 class="text-center form__h2">Votre adresse de livraison </h2> 
     <span id="formVide" class="infoFormVide"> </span>
    
     <form name="RegForm" class="form">
@@ -144,7 +144,7 @@ function afficherFormulaire() {
 }
 
 
-
+// function ORDER en utilisant methode addEventListener(), regex pour verification form, si tout l'elements sont correct on permetre passer a un autre etape, si non on envoy une message d'error
 
 function order() {
     const btnOrder = document.querySelector(".command__button")
@@ -163,7 +163,7 @@ function order() {
             // console.log("client");
             // console.log(client);
 
-        ///validation form
+        ///validation form et methode REGEX pour verification formulaire
 
         const regex = (value) => {
             return /^[a-zA-Z]{3,20}$/.test(value)
@@ -275,9 +275,17 @@ function order() {
                 products: panier.map((product) => product.id),
             };
 
-            console.log("objetEnvoyer");
-            console.log(objetEnvoyer);
+            // console.log("objetEnvoyer");
+            // console.log(objetEnvoyer);
 
+
+            const popupConfirmation = () => {
+                if (window.confirm("Pour valider votre commande clique O oooooooK")) {
+                    window.location.href = "confirmation.html"
+                } else {
+                    window.location.href = "#"
+                }
+            }
 
             const donnesServer = fetch("http://localhost:3000/api/furniture/order", {
                     method: "POST",
@@ -289,58 +297,17 @@ function order() {
                 .then(function(respons) {
                     return respons.json()
                 })
-                .then(function(respons) {
-                    if (window.confirm("Pour valider votre commande clique OK")) {
-                        window.location.href = "confirmation.html"
-                    } else {
-                        window.location.href = "#"
-                    }
-
+                .then(function() {
+                    popupConfirmation();
                 })
-                .catch(function(error) {
-                    alert("Oups...! Réessayer ultérieurement...")
+                .catch(function() {
+                    console.log("Oups...! Réessayer ultérieurement...")
                 })
 
 
         } else {
             document.querySelector("#formVide").textContent = "Remplir le formulaire de livraison"
         }
-
-
-
-        // const objetEnvoyer = {
-        //     contact: client,
-        //     products: panier.map((product) => product.id),
-        // };
-
-        // console.log("objetEnvoyer");
-        // console.log(objetEnvoyer);
-
-
-        // const donnesServer = fetch("http://localhost:3000/api/furniture/order", {
-        //         method: "POST",
-        //         body: JSON.stringify(objetEnvoyer),
-        //         headers: {
-        //             "Content-type": "application/json",
-        //         }
-        //     })
-        //     .then(function(respons) {
-        //         return respons.json()
-        //     })
-        //     .then(function(respons) {
-        //         if (window.confirm("Pour valider votre commande clique OK")) {
-        //             window.location.href = "confirmation.html"
-        //         } else {
-        //             window.location.href = "#"
-        //         }
-
-        //     })
-        //     .catch(function(error) {
-        //         alert("Oups...! Veuillez réessayer ultérieurement...")
-        //     })
-
-        // console.log("donnesServer");
-        // console.log(donnesServer);
 
     })
 
