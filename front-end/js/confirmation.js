@@ -19,5 +19,4 @@ function displayOrder() {
     <button class="retour" onclick="window.location.href='index.html'">Retour à l'accueil </button>
     `
     localStorage.clear()
-
 }

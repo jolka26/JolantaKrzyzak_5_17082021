@@ -13,6 +13,8 @@ function main() {
 
 }
 
+///function verifier le localstorage, si il est vide il envoye message que panier est vide, si non affiche tout le produit ajouter dans le panier
+
 function command() {
 
 
