@@ -91,6 +91,8 @@ function prixTotal() {
         allPrice.push(prixProduitDansPanier)
             // console.log(allPrice);
     }
+
+
     const reducer = (accumulator, currentValue) => accumulator + currentValue
     const prixTotal = allPrice.reduce(reducer, 0)
     localStorage.setItem("totalPrix", prixTotal)

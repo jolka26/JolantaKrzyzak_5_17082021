@@ -23,5 +23,6 @@ function displayOrder() {
     </div>
     <button class="retour" onclick="window.location.href='index.html'">Retour à l'accueil </button>
     `
-    localStorage.clear()
+    localStorage.clear();
+    setTimeout("window.location.href = 'index.html'", 5000);
 }
