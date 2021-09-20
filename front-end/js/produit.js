@@ -48,7 +48,6 @@ function getProducts() {
         </div>
         
         </div>
-        <button class="panier" onclick="window.location.href='panier.html'">Voir panier </button>
     `
             }
 
