@@ -282,7 +282,7 @@ function order() {
 
 
             const popupConfirmation = () => {
-                if (window.confirm("Pour valider votre commande clique O oooooooK")) {
+                if (window.confirm("Pour valider votre commande clique OK")) {
                     window.location.href = "confirmation.html"
                 } else {
                     window.location.href = "#"
